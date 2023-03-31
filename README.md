@@ -1,5 +1,7 @@
 # sharp-pages
 
+[maket](https://www.figma.com/file/z2sIQjBZiP7KyWCnK4vvz2/FitGYM?node-id=0-1&t=HkEEdX5y6jqw9tTN-0)
+
 ## Запуск збірки
 
 Інсталяція залежностей
