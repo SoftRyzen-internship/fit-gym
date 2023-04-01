@@ -37,7 +37,6 @@ p {
   margin-bottom: 0;
 }
 
-
 img {
   display: block;
   max-width: 100%;
@@ -52,8 +51,8 @@ a {
 
 button {
   cursor: pointer;
+  border: none;
 }
-
 
 .visually-hidden {
   position: absolute !important;
@@ -73,6 +72,3 @@ button {
 .nowrap {
   white-space: nowrap;
 }
-
-
-

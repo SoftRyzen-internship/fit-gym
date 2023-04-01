@@ -1,33 +1,26 @@
-.btn {
+.button--secondary {
   display: inline-block;
-  padding: 18px 28px;
+  width: 100%;
+  padding: 19px;
+  font-weight: 600;
+  color: var(--accent-primary-gradient);
+  border: solid 2px transparent;
+  background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)),
+    linear-gradient(
+      180deg,
+      var(--accent-primary-gradient) 0%,
+      var(--accent-secondary-gradient) 100%
+    );
+  border-radius: 12px;
+  background-origin: border-box;
+  box-shadow: 2px 1000px 1px var(--black-bg) inset;
+  transition: box-shadow var(--fast) linear;
 
-  text-align: center;
-  text-transform: uppercase;
-  text-decoration: none;
-  white-space: nowrap;
-  cursor: pointer;
-  border: 1px solid transparent;
-  border-radius: 5px;
-
-  color: var(--white-txt-cl);
-  background-color: var(--accent-cl);
-
-  transition: color var(--fast) linear, background-color var(--fast) linear,
-    border var(--fast) linear;
-
-  &:hover,
-  &:focus {
-    color: var(--accent-cl);
-    border: 1px solid var(--accent-cl);
-    background-color: var(--white-bg);
+  @include mq(mobile) {
+    width: 200px;
   }
 
-  @include mq(mobile-only) {
-    min-width: 250px;
-    max-width: 280px;
-  }
-  @include mq(tablet) {
-    padding: 18px 52px;
+  &:hover {
+    box-shadow: 2px 1000px 1px var(--white-bg) inset;
   }
 }
