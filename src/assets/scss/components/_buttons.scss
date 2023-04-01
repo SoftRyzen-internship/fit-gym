@@ -4,8 +4,9 @@
   position: relative;
   display: inline-block;
   width: 100%;
-  padding: 19px;
+  padding: 20px;
   font-weight: 600;
+  line-height: 1.62;
   color: var(--primary-txt-cl);
   background: linear-gradient(180deg, #0239fe 0%, #0285fe 100%);
   border-radius: 12px;
@@ -42,6 +43,7 @@
   width: 100%;
   padding: 19px;
   font-weight: 600;
+  line-height: 1.62;
   color: var(--accent-primary-gradient);
   border: solid 2px transparent;
   background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)),
@@ -71,6 +73,7 @@
   width: 100%;
   padding: 19px;
   font-weight: 600;
+  line-height: 1.62;
   color: var(--primary-txt-cl);
   background-color: transparent;
   border: 2px solid var(--primary-txt-cl);
