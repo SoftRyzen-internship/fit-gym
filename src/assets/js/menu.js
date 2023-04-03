@@ -1,34 +1,34 @@
-(() => {
-  const openMenuBtn = document.querySelector('[data-menu-btn]');
-  const mobileMenu = document.querySelector('[data-menu]');
-  const btnMenuClose = document.querySelector('[data-menu-close-btn]');
-  const body = document.querySelector('body');
-  const menuLink = document.querySelectorAll('.nav-link');
+const burgerBtn = document.querySelector('[data-burger-menu]');
+const mobileMenu = document.querySelector('[data-mobile-menu]');
+const closeBtn = document.querySelector('[data-close]');
+const backdrop = document.querySelector('[data-menu-backdrop]');
 
-  openMenuBtn.addEventListener('click', () => {
-    toggleMenu();
-    // adds a listener to close btn
-    btnMenuClose.addEventListener('click', toggleMenu);
-  });
+burgerBtn.addEventListener('click', e => {
+  openMenu();
+});
 
-  menuLink.forEach(function (link) {
-    link.addEventListener('click', () => {
-      toggleMenu();
-    });
-  });
+backdrop.addEventListener('click', e => {
+  const { tagName } = e.target;
 
-  function toggleMenu() {
-    if (window.innerWidth < 1280) {
-      const expanded = openMenuBtn.getAttribute('aria-expanded') === 'true' || false;
-
-      openMenuBtn.classList.toggle('is-active');
-      openMenuBtn.setAttribute('aria-expanded', !expanded);
-
-      mobileMenu.classList.toggle('is-open');
-      body.classList.toggle('scroll-hidden');
-    }
-
-    // removes a listener to close btn
-    btnMenuClose.removeEventListener('click', toggleMenu);
+  if (tagName !== 'DIV' && tagName !== 'UL' && tagName !== 'NAV') {
+    closeMenu();
   }
-})();
+
+  if (e.target === e.currentTarget) {
+    closeMenu();
+  }
+});
+
+const closeMenu = () => {
+  mobileMenu.style.transform = 'translateX(100%)';
+  burgerBtn.style.opacity = 1;
+  backdrop.classList.add('is-hidden');
+  document.body.classList.remove('scroll-hidden');
+};
+
+const openMenu = () => {
+  mobileMenu.style.transform = 'translateX(0)';
+  burgerBtn.style.opacity = 0;
+  backdrop.classList.remove('is-hidden');
+  document.body.classList.add('scroll-hidden');
+};
