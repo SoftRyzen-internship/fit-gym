@@ -24,7 +24,7 @@ $('.plans-slider').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
         centerMode: true,
-        centerPadding: '26%',
+        centerPadding: '27.4%',
       },
     },
   ],

@@ -3,15 +3,11 @@
 
   .plans & {
     @include mq(tablet) {
-      gap: 28px;
-    }
-
-    @include mq(desktop) {
       gap: 32px;
     }
-  }
 }
 
 .slick-list {
   overflow: hidden;
+}
 }

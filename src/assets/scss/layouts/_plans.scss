@@ -1,3 +1,10 @@
+.plans__container {
+  @include mq(tablet-only) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
 .plans__title {
   font-size: 48px;
   line-height: 1.3;
