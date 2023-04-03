@@ -11,16 +11,29 @@
 }
 
 .cards {
-  display: flex;
-  gap: 32px;
+  margin: 0 auto;
+  // display: inline-flex;
+  // gap: 32px;
 }
 
 .cards__container {
   display: inline-block;
-  width: 384px;
-  height: 520px;
   perspective: 1000px;
   border-radius: 12px;
+  // width: 280px;
+  // height: 453px;
+  // @include mq(mobile) {
+  //   width: 440px;
+  //   height: 593px;
+  // }
+  @include mq(tablet) {
+    width: 336px;
+    height: 453px;
+  }
+  @include mq(desktop) {
+    width: 384px;
+    height: 520px;
+  }
 }
 
 .card {
@@ -42,9 +55,21 @@
   -moz-backface-visibility: hidden;
   position: absolute;
   top: 0;
-  width: 384px;
-  height: 520px;
-  border-radius: 5px;
+  border-radius: 8px;
+  width: 280px;
+  height: 377px;
+  // @include mq(mobile) {
+  //   width: 440px;
+  //   height: 593px;
+  // }
+  @include mq(tablet) {
+    width: 336px;
+    height: 453px;
+  }
+  @include mq(desktop) {
+    width: 384px;
+    height: 520px;
+  }
 }
 
 .back {
@@ -66,4 +91,23 @@
   bottom: 0px;
   padding: 24px 16px 16px 16px;
   background: linear-gradient(180deg, rgba(0, 1, 5, 0) 0%, #000105 100%);
+}
+
+.slick-slide {
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+
+  &:not(:first-child) {
+    margin-left: 32px;
+  }
+
+  @include mq(desktop) {
+    // width: 320px;
+  }
+}
+
+.programs__img {
+  // width: 100%;
 }
