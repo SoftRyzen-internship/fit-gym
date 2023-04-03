@@ -4,10 +4,10 @@
   .plans & {
     @include mq(tablet) {
       gap: 32px;
-    }
+    }}
 }
 
 .slick-list {
   overflow: hidden;
 }
-}
+
