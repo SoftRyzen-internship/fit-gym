@@ -1,7 +1,7 @@
 $('.program__slick-slider').slick({
   slidesToShow: 1,
   infinite: true,
-  // speed: 300,
+  speed: 300,
   slidesToScroll: 1,
   mobileFirst: true,
   arrows: false,
@@ -12,12 +12,10 @@ $('.program__slick-slider').slick({
       breakpoint: 768,
       settings: {
         slidesToShow: 2,
-        slidesToScroll: 1,
-        dots: true,
       },
     },
     {
-      breakpoint: 1440,
+      breakpoint: 1280,
       settings: {
         slidesToShow: 3,
         dots: false,

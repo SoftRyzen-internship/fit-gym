@@ -10,8 +10,15 @@
   }
 }
 
+.programs__container {
+  @include mq(mobile-only) {
+    max-width: 320px;
+  }
+}
+
 .cards {
-  margin: 0 auto;
+  // margin: 0 auto;
+  overflow: hidden;
   // display: inline-flex;
   // gap: 32px;
 }
@@ -93,7 +100,7 @@
   background: linear-gradient(180deg, rgba(0, 1, 5, 0) 0%, #000105 100%);
 }
 
-.slick-slide {
+.program__slick-slider .slick-slide {
   // display: flex;
   // flex-direction: column;
   // justify-content: center;
@@ -107,6 +114,12 @@
     // width: 320px;
   }
 }
+
+// .program__slick-slider .slick-dots {
+//   @include mq(desktop) {
+//     display: none;
+//   }
+// }
 
 .programs__img {
   // width: 100%;
