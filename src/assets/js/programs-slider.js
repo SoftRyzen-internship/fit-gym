@@ -1,7 +1,6 @@
 $('.program__slick-slider').slick({
   slidesToShow: 1,
   infinite: true,
-  speed: 300,
   slidesToScroll: 1,
   mobileFirst: true,
   arrows: false,

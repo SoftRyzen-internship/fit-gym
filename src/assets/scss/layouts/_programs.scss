@@ -27,7 +27,7 @@
   display: inline-block;
   perspective: 1000px;
   border-radius: 12px;
-  // width: 280px;
+  width: 280px;
   // height: 453px;
   // @include mq(mobile) {
   //   width: 440px;
@@ -45,12 +45,22 @@
 
 .card {
   position: relative;
-  width: 100%;
-  height: 100%;
+  // width: 100%;
+  // height: 100%;
+  width: 280px;
+  height: 377px;
   cursor: pointer;
   transform-style: preserve-3d;
   transform-origin: center right;
   transition: transform 1s;
+  @include mq(tablet) {
+    width: 336px;
+    height: 453px;
+  }
+  @include mq(desktop) {
+    width: 384px;
+    height: 520px;
+  }
 }
 
 .card.active {
@@ -114,12 +124,6 @@
     // width: 320px;
   }
 }
-
-// .program__slick-slider .slick-dots {
-//   @include mq(desktop) {
-//     display: none;
-//   }
-// }
 
 .programs__img {
   // width: 100%;
