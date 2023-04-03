@@ -15,7 +15,7 @@
   );
   border-radius: 12px;
 
-  @include mq(mobile) {
+  @include mq(tablet) {
     width: 200px;
   }
 
@@ -65,7 +65,7 @@
   box-shadow: 2px 1000px 1px var(--black-bg) inset;
   transition: box-shadow var(--fast) linear;
 
-  @include mq(mobile) {
+  @include mq(tablet) {
     width: 200px;
   }
 

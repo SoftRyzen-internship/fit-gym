@@ -1,14 +1,20 @@
 .header {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
   padding-top: 20px;
-  padding-bottom: 20px;
 
   display: flex;
   justify-content: flex-start;
   align-items: center;
 
+  @include mq(mobile-only) {
+    justify-content: space-between;
+  }
   @include mq(tablet) {
     padding-top: 24px;
-    padding-bottom: 24px;
   }
 }
 
