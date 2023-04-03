@@ -77,13 +77,38 @@
 // Кнопка для Program
 
 .button--white {
+  position: relative;
   display: inline-block;
   width: 100%;
   padding: 19px;
   font-weight: 600;
   line-height: 1.62;
   color: var(--primary-txt-cl);
-  background-color: transparent;
+  background: transparent;
   border: 2px solid var(--primary-txt-cl);
   border-radius: 12px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      0deg,
+      var(--hover-primary-gradient) 0%,
+      var(--hover-secondary-gradient) 100%
+    );
+    border-radius: 12px;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity var(--fast) linear;
+  }
+
+  &:hover::before {
+    opacity: 1;
+  }
+
+  & span {
+    position: relative;
+    z-index: 2;
+  }
 }
