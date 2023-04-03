@@ -1,15 +1,32 @@
-<!-- <div class="mobile-menu" data-menu>
-  <img
-    class="logo mobile-menu-logo"
-    src="./assets/images/logo-dark.svg"
-    alt="GoIT logo"
-    width="67"
-    height="20"
-  />
-  <button class="mobile-menu-close" type="button" aria-label="zamknij menu" data-menu-close-btn>
-    <svg class="mobile-menu-close-svg" width="40" height="40">
-      <use href="./assets/images/sprite.svg#icon-close-menu"></use>
-    </svg>
-  </button>
-  <div class="container">{% include 'components/nav-menu.html' %}</div>
-</div> -->
+<div class="menu-backdrop backdrop is-hidden" data-menu-backdrop>
+  <div style="transform: translateX(100%)" class="mobile-menu" data-mobile-menu>
+    <div class="mobile-menu__wrapper">
+      <div class="mobile-menu__wrapper mobile-menu__logo-wrapper">
+        <a href="" class="logo mobile-menu__logo" aria-label="company logo" data-logo
+          >FitGYM
+          <svg width="24" height="24">
+            <use href="./assets/images/sprite.svg#sport"></use></svg
+        ></a>
+        <button class="close-btn" type="button" data-close aria-label="close button">
+          <svg width="16" height="16">
+            <use href="./assets/images/sprite.svg#icon-close"></use>
+          </svg>
+        </button>
+      </div>
+      {% include 'components/nav-menu.html' %}
+    </div>
+
+    <div class="mobile-menu__link-wrapper">
+      <a class="mobile-menu__link" type="button" data-close aria-label="close button">
+        <svg width="100%" height="100%">
+          <use href="./assets/images/sprite.svg#google-play"></use>
+        </svg>
+      </a>
+      <a class="mobile-menu__link" type="button" data-close aria-label="close button">
+        <svg width="100%" height="100%">
+          <use href="./assets/images/sprite.svg#app-store"></use>
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>

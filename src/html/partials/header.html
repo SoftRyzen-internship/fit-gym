@@ -1,28 +1,14 @@
-<header class="header">
-  <div class="container">
-    <a href="./" aria-label="logo ">
-      <img
-        class="logo"
-        src="./assets/images/logo-dark.svg"
-        alt="GoIT logo"
-        width="67"
-        height="20"
-      />
-    </a>
-    {% include 'components/nav-menu.html' %}
-    <button type="button" class="mobile-menu-btn" data-menu-btn aria-label="otwórz menu mobilne">
-      <svg class="mobile-menu-svg" width="30" height="20">
-        <use href="./assets/images/sprite.svg#icon-mobile-menu"></use>
-      </svg>
-    </button>
-    <button
-      type="button"
-      class="btn btn-modal tablet-menu-btn"
-      data-menu-btn
-      aria-label="otwórz menu tabletu"
-    >
-      show form
-    </button>
-  </div>
+<header id="header" class="header container">
+  <a href="" class="logo" aria-label="company logo" data-logo
+    >FitGYM
+    <svg width="24" height="24">
+      <use href="./assets/images/sprite.svg#sport"></use></svg
+  ></a>
+  {% include 'components/nav-menu.html' %}
+  <button class="burger-menu" type="button" aria-label="navigation menu" data-burger-menu>
+    <svg aria-label="navigation menu icon" width="24" height="24">
+      <use href="./assets/images/sprite.svg#burger"></use>
+    </svg>
+  </button>
+  {% include 'components/mobile-menu.html' %}
 </header>
-
