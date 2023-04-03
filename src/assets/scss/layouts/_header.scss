@@ -3,7 +3,7 @@
   padding-bottom: 20px;
 
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
 
   @include mq(tablet) {
@@ -13,9 +13,26 @@
 }
 
 .logo {
+  display: flex;
+  align-items: center;
   font-weight: 600;
   font-size: 24px;
   background: linear-gradient(180deg, #0239fe 0%, #0285fe 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+  &:hover,
+  &:focus {
+    background: linear-gradient(0deg, #002abf 0%, #548aff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+.mobile-menu__logo.logo {
+  background: linear-gradient(180deg, var(--primary-txt-cl) 0%, var(--primary-txt-cl) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -24,7 +41,11 @@
 .burger-menu {
   background-color: transparent;
 
-  transition: opacity var(--slow) linear, color var(--fast) linear;
+  svg {
+    fill: var(--primary-txt-cl);
+  }
+
+  transition: opacity 0.4s linear, color 0.2s linear;
 
   // &:hover,
   // &:focus {

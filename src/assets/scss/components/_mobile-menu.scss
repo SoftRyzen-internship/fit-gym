@@ -36,9 +36,7 @@
   font-size: 16px;
   line-height: 1.56;
 
-  background-color: var(--white);
-
-  transition: transform var(--slow) linear;
+  transition: transform 0.4s linear;
 
   &__wrapper {
     width: 100%;
@@ -53,14 +51,19 @@
   &__link-wrapper {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
   }
 
   &__link {
     width: 148px;
     height: 40px;
+    margin-right: 16px;
     background-color: var(--primary-txt-cl);
     border-radius: 8px;
+  }
+
+  &__link:last-child {
+    margin-right: 0;
   }
 
   @include mq(tablet) {
@@ -71,46 +74,6 @@
   }
 }
 
-// .menu-backdrop {
-//   position: absolute;
-//   top: 0;
-// }
-
-// .mobile-menu .nav-list {
-//   margin-top: 8px;
-
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   gap: 16px;
-
-//   @include mq(tablet) {
-//     margin-top: 16px;
-//     gap: 24px;
-//   }
-// }
-
 .close-btn {
-  // margin: 16px 16px 0 auto;
-
-  // transition: color var(--fast) linear;
-
-  svg {
-    width: 24px;
-    height: 24px;
-  }
-
-  // &:hover,
-  // &:focus {
-  //   color: var(--accent-cl);
-  // }
-
-  // @include mq(tablet) {
-  //   margin: 24px 24px 0 auto;
-
-  //   svg {
-  //     width: 32px;
-  //     height: 32px;
-  //   }
-  // }
+  background-color: transparent;
 }

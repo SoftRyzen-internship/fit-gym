@@ -11,6 +11,10 @@
   @include mq(tablet) {
     display: flex;
     gap: 40px;
+    margin-left: 52px;
+  }
+  @include mq(desktop) {
+    margin-left: 104px;
   }
 }
 
@@ -26,5 +30,7 @@
   }
 }
 
-// .nav-item:hover {
-// }
+.nav-item:hover,
+.nav-item:focus {
+  color: var(--accent-cl);
+}
