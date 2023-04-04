@@ -9,8 +9,11 @@
   width: 100%;
 }
 
-.title {
-  width: 188px;
+.hero__title {
+  position: relative;
+  z-index: 10;
+  font-family: var(--second-font);
+  width: 200px;
   margin-top: 148px;
   font-weight: 700;
   font-size: 52px;
