@@ -1,7 +1,7 @@
 .pop-up {
     opacity: 1;
     transition: opacity var(--fast) linear;
-    
+
     &__overlay {
         position: fixed;
         left: 0;
@@ -31,7 +31,8 @@
         right: 12px;
     }
 
-    &__content {
+    &__content,
+    &__content-subscribe {
         display: block;
         min-width: 227px;
         max-width: 100%;
@@ -42,8 +43,8 @@
         text-align: center;
     }
 
-    &__content:last-child {
-        margin-top: 16px;
+    &__content:first-child {
+        margin-bottom: 16px;
     }
     &--is-hidden {
         opacity: 0;
