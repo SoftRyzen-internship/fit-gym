@@ -8,6 +8,8 @@
   --accent-secondary-gradient: #0285fe;
   --hover-primary-gradient: #002abf;
   --hover-secondary-gradient: #548aff;
+  --hover-secondary: #2b99ff;
+  --disabled-cl: #abafc7;
 
   /* TEXT COLORS */
   --primary-txt-cl: #fdfdfd;
@@ -18,12 +20,16 @@
   --secondary-bg: #00113b;
   --white-bg: #ffffff;
   --black-bg: #000000;
+  --light-bg: rgba(253, 253, 253, 0.5);
+  --disabled-bg: #424a6a;
 
   /* BORDER */
 
   /* SHADOW */
 
   --box-shadow: 0px, 8px rgba(76, 64, 247, 0.5);
+  --box-shadow-primary: 3px 6px 25px rgba(76, 64, 247, 0.5);
+  --box-shadow-light: 2px 4px 15px rgba(255, 255, 255, 0.3);
 
   /* FONTS */
   --main-font: 'Roboto', sans-serif;
