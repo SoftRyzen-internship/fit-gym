@@ -42,6 +42,10 @@
     position: relative;
     z-index: 2;
   }
+
+  &:hover {
+    box-shadow: 5px 10px 30px rgba(76, 64, 247, 0.5);
+  }
 }
 
 // Кнопка для hero
@@ -70,7 +74,7 @@
   }
 
   &:hover {
-    box-shadow: 2px 1000px 1px var(--white-bg) inset;
+    box-shadow: 2px 1000px 1px #adedff inset, 5px 10px 30px rgba(76, 64, 247, 0.5);
   }
 }
 
@@ -80,8 +84,8 @@
   position: relative;
   display: inline-block;
   width: 100%;
-  padding: 19px;
-  font-weight: 600;
+  padding: 17px;
+  font-weight: 700;
   line-height: 1.62;
   color: var(--primary-txt-cl);
   background: transparent;
@@ -92,11 +96,8 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-      0deg,
-      var(--hover-primary-gradient) 0%,
-      var(--hover-secondary-gradient) 100%
-    );
+    background: rgba(253, 253, 253, 0.5);
+    box-shadow: 5px 10px 30px rgba(255, 255, 255, 0.5);
     border-radius: 12px;
     z-index: 1;
     opacity: 0;
