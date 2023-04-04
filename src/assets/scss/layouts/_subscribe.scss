@@ -63,15 +63,15 @@
   }
 
   @include mq(tablet) {
-    width: 336px;
     position: absolute;
     top: 55px;
     right: 32px;
+    width: 336px;
   }
 
   @include mq(desktop) {
-    width: 488px;
     top: 182px;
+    width: 488px;
   }
 }
 
@@ -99,14 +99,14 @@
   position: relative;
 }
 
-.subscribe__formTitle {
+.subscribe__formText {
   font-weight: 500;
   line-height: 1.5;
   margin-bottom: 20px;
 }
 
-.subscribe__formText {
-  font-family: 'Oswald';
+.subscribe__formTitle {
+  font-family: var(--second-font);
   font-weight: 700;
   font-size: 32px;
   line-height: 1.3;
