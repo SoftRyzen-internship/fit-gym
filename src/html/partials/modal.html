@@ -1,71 +1,58 @@
-<!-- <div class="backdrop is-hidden" data-modal>
-  <div class="modal">
-    <button class="btn-close" type="button" data-modal-close aria-label="zamknij menu"></button>
-    <div class="modal-content">
-      <form class="contact-form" action="#">
-        <h2 class="form__title">Lorem ipsum</h2>
-        <div class="form__wrapper">
-          <div class="contact-form-field">
-            <label class="matter-textfield-outlined">
-              <input
-                class="contact-form-input"
-                id="name"
-                type="text"
-                name="name"
-                placeholder=" "
-                required
-              />
-              <span>email</span>
-            </label>
-          </div>
+<div class="backdrop is-hidden" data-modal>
+  <div class="modal is-hidden">
+    <svg class="close-btn modal__close-icon" aria-label="Close modal" data-modal-close>
+      <use href="./assets/images/sprite.svg#icon-close"></use>
+    </svg>
 
-          <div class="contact-form-field">
-            <label class="matter-textfield-outlined">
-              <input
-                class="contact-form-input"
-                id="phone"
-                type="tel"
-                name="phone"
-                placeholder=" "
-                required
-              />
-              <span>phone</span>
-            </label>
-          </div>
-
-          <div class="contact-form-field">
-            <label class="matter-textfield-outlined">
-              <input
-                class="contact-form-input"
-                id="email"
-                type="email"
-                name="email"
-                placeholder=" "
-                required
-              />
-              <span>Email *</span>
-            </label>
-          </div>
-        </div>
-
-        <button class="contact-form-btn" type="submit">Lorem ipsum</button>
-
-        <label for="privacy" class="checkbox-label">
+    <div>
+      <h2 class="title modal__title">Contact us</h2>
+      <form class="modal__form" action="#" id="form">
+        <div class="modal__form-control modal__form-control--name">
+          <svg class="modal__icon-user" aria-label="user Icon" width="20" height="20">
+            <use href="assets/images/sprite.svg#icon-user"></use>
+          </svg>
           <input
-            class="checkbox"
-            id="privacy"
-            name="privacy"
-            type="checkbox"
-            value="privacy"
-            checked
+            class="modal__form-input"
+            placeholder="Name"
+            id="name"
+            type="text"
+            name="name"
             required
           />
-          <span class="checkmark"></span>
-          <span class="text"
-            >Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, dolorem.</span
-          >
-        </label>
+          <span>Error message</span>
+        </div>
+
+        <div class="modal__form-control">
+          <svg class="modal__icon-phone" aria-label="phone icon" width="20" height="20">
+            <use href="assets/images/sprite.svg#icon-phone"></use>
+          </svg>
+          <input
+            class="modal__form-input"
+            placeholder="Phone number"
+            id="telephone"
+            type="tel"
+            name="telephone"
+            required
+          />
+          <span>Error message</span>
+        </div>
+
+        <div class="modal__form-control">
+          <svg class="modal__icon-email" aria-label="email icon" width="20" height="20">
+            <use href="assets/images/sprite.svg#icon-email"></use>
+          </svg>
+          <input
+            class="modal__form-input"
+            placeholder="Email"
+            id="email"
+            type="email"
+            name="email"
+            required
+          />
+        </div>
+
+        <button class="button--primary modal__send-btn" type="submit">Send</button>
       </form>
     </div>
   </div>
-</div> -->
+</div>
