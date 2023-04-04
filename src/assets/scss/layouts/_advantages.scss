@@ -18,14 +18,10 @@
 }
 
 .advantages__title {
-  margin-bottom: 31px;
+  margin-bottom: 32px;
 
   @include mq(tablet) {
     margin-bottom: 40px;
-  }
-
-  @include mq(desktop) {
-    margin-bottom: 42px;
   }
 }
 
@@ -36,7 +32,7 @@
   letter-spacing: -0.03em;
 
   @include mq(desktop) {
-    margin-bottom: 76px;
+    margin-bottom: 64px;
     font-size: 20px;
   }
 }
@@ -86,8 +82,16 @@
 }
 
 .advantages__apps {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+
   @include mq(mobile-only) {
     margin-bottom: 40px;
+  }
+
+  @include mq(tablet) {
+    justify-content: flex-start;
   }
 }
 
@@ -99,14 +103,6 @@
   display: inline-block;
 }
 
-.advantages__app:first-child {
-  margin-right: 20px;
-
-  @include mq(mobile) {
-    margin-right: 23px;
-  }
-}
-
 .advantages__image {
   @include mq(tablet) {
     width: 332px;
@@ -116,5 +112,12 @@
   @include mq(desktop) {
     width: 698px;
     height: 750px;
+  }
+}
+
+.advantages__google,
+.advantages__apple {
+  @include mq(mobile) {
+    width: 148px;
   }
 }
