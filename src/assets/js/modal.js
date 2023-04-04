@@ -1,43 +1,31 @@
-import $ from 'jquery';
+const refs = {
+  closeModalBtn: document.querySelector('[data-modal-close]'),
+  backdrop: document.querySelector('[data-modal]'),
+  modal: document.querySelector('.modal'),
+  modalContent: document.querySelector('.modal-content'),
+  openModal: document.querySelector('[data-modal-open]'),
+};
 
-$(document).ready(function() {
-  const openModalBtn = document.querySelectorAll('.btn-modal');
-  const modal = document.querySelector('[data-modal]');
-  const closeModalBtn = document.querySelector('[data-modal-close]');
-  const body = document.querySelector('body');
-  const backdrop = document.querySelector('.backdrop');
+export function toggleModal() {
+  document.body.classList.toggle('scroll-hidden');
+  refs.backdrop.classList.toggle('is-hidden');
+  refs.modal.classList.toggle('is-hidden');
+}
 
-  openModalBtn.forEach(function(btn) {
-    btn.addEventListener('click', e => {
-      e.preventDefault();
-      setTimeout(() => {
-        toggleModal();
-      }, 500);
-    });
-  });
-
-  function toggleModal() {
-    modal.classList.toggle('is-hidden');
-    body.classList.toggle('scroll-hidden');
+function handleKey(e) {
+  if (e.code === 'Escape') {
+    toggleModal();
   }
 
-  function handleKey(e) {
-    if (!modal.classList.contains('is-hidden')) {
-      if (e.key === 'Escape') {
-        toggleModal();
-      }
-    }
-    return;
-  }
+  return;
+}
 
-  function handleClose(e) {
-    if (e.target === e.currentTarget) {
-      toggleModal();
-    }
-    return;
-  }
+function handleClose(e) {
+  if (e.target !== e.currentTarget) return;
+  toggleModal();
+}
 
-  document.addEventListener('keydown', handleKey);
-  backdrop.addEventListener('mousedown', handleClose);
-  closeModalBtn.addEventListener('click', toggleModal);
-});
+document.addEventListener('keydown', handleKey);
+refs.backdrop.addEventListener('mousedown', handleClose);
+refs.closeModalBtn.addEventListener('click', () => toggleModal());
+refs.openModal.addEventListener('click', () => toggleModal());
