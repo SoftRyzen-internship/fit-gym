@@ -1,0 +1,169 @@
+.plans__container {
+  @include mq(tablet-only) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.plans__title {
+  font-size: 48px;
+  line-height: 1.3;
+  letter-spacing: normal;
+  margin-bottom: 40px;
+
+  @include mq(tablet-only) {
+    padding-left: 32px;
+    margin-bottom: 28px;
+  }
+}
+
+.plans-slider {
+  margin-bottom: 37px;
+
+  @include mq(tablet) {
+    margin-bottom: 53px;
+  }
+}
+
+.slider-item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 8px;
+  background-image: linear-gradient(
+    to bottom,
+    var(--accent-primary-gradient),
+    var(--accent-secondary-gradient)
+  );
+  padding: 34px 12px 32px;
+
+  @include mq(tablet) {
+    width: 320px !important;
+    background-image: linear-gradient(to bottom, #0055a6, rgba(116, 123, 255, 0.35));
+    padding: 34px 60px 32px;
+  }
+
+  @include mq(tablet-only) {
+    &.slick-active {
+      background-image: linear-gradient(
+        to bottom,
+        var(--accent-primary-gradient),
+        var(--accent-secondary-gradient)
+      );
+    }
+  }
+
+  @include mq(desktop) {
+    width: 384px !important;
+    padding: 62px 92px;
+  }
+}
+
+.slider-item:nth-child(2) {
+  @include mq(desktop) {
+    order: 3;
+  }
+}
+
+.slider-item:nth-child(1) {
+  @include mq(desktop) {
+    order: 2;
+    background-image: linear-gradient(
+      to bottom,
+      var(--accent-primary-gradient),
+      var(--accent-secondary-gradient)
+    );
+  }
+}
+
+.slider-item:nth-child(3) {
+  @include mq(desktop) {
+    order: 1;
+  }
+}
+
+.plans__icon,
+.plans__name {
+  margin-bottom: 24px;
+}
+
+.plans__icon {
+  @include mq(desktop) {
+    margin-bottom: 20px;
+  }
+}
+
+.plans__name {
+  @include mq(desktop) {
+    margin-bottom: 40px;
+  }
+}
+
+.plans__description {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  flex-grow: 1;
+  gap: 20px;
+  margin-bottom: 40px;
+
+  @include mq(mob-only) {
+    max-width: 210px;
+  }
+
+  @include mq(desktop) {
+    font-size: 20px;
+    margin-bottom: 34px;
+  }
+}
+
+.plans__payment {
+  font-size: 20px;
+  margin-bottom: 16px;
+
+  @include mq(desktop) {
+    margin-bottom: 20px;
+  }
+}
+
+.plans__price,
+.plans__name {
+  font-family: Oswald;
+  font-weight: 700;
+  font-size: 32px;
+}
+
+.plans__price {
+  margin-right: 4px;
+}
+
+.plans__type {
+  margin-bottom: 22px;
+
+  @include mq(desktop) {
+    font-size: 20px;
+    margin-bottom: 40px;
+  }
+}
+
+.navigation {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+
+  @include mq(desktop) {
+    display: none;
+  }
+}
+
+.plans-prev-btn,
+.plans-next-btn {
+  width: 30px;
+  height: 22px;
+  background-color: transparent;
+}
+
+.plans-next-btn svg {
+  stroke: var(--primary-txt-cl);
+}
