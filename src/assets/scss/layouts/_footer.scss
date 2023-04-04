@@ -1,65 +1,63 @@
 .footer {
-  padding-top: 22px;
-  padding-bottom: 17px;
-
-  font-size: 14px;
-  line-height: 1.5;
-  color: var(--gray-txt-cl);
-  background-color: var(--white-bg);
-
-  p:not(:last-child) {
-    margin-bottom: 7px;
-  }
-
-  &-wrapper {
-    color: var(--gray-txt-cl);
-    @include mq(tablet) {
-      display: flex;
-      justify-content: space-between;
-      color: var(--secondary-txt-cl);
-    }
-  }
-  &-link {
-    display: block;
-
-    @include mq(mobile-only) {
-      margin-bottom: 22px;
-    }
-  }
-  &-logo {
-    @include mq(mobile-only) {
-      margin-left: auto;
-      margin-right: auto;
-    }
-  }
-  .address,
-  .copyright {
-    @include mq(mobile-only) {
-      display: none;
-    }
-  }
-  .address {
-  }
-  .copyright {
-  }
-}
-.footer-nav-list {
-  @include mq(mobile-only) {
+  position: relative;
+  background-color: var(--secondary-bg);
+  &__list {
     display: flex;
-    justify-content: space-around;
-  }
-  @include mq(desktop) {
-    display: flex;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 32px;
+
+    &::before {
+      content: '';
+      height: 1px;
+      width: 100%;
+      position: absolute;
+      background-color: white;
+      top: 0;
+    }
   }
 
-  & > .item {
-    @include mq(tablet) {
-      font-size: 16px;
-    }
-    @include mq(desktop) {
-      &:not(:last-child) {
-        margin-right: 50px;
-      }
-    }
+  &__item:not(:first-child) {
+    margin-left: 16px;
+  }
+
+  &__social-list {
+    display: flex;
+    margin: 0 auto;
+    width: 190px;
+  }
+
+  &__social-item:not(:first-child) {
+    margin-left: 10px;
+  }
+
+  &__social-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: red;
+  }
+
+  &__social-icon {
+    fill: white;
+  }
+
+  &__title-wrapper {
+    color: var(--secondary-txt-cl);
+    text-align: center;
+    margin-top: 32px;
+  }
+
+  &__title {
+    font-weight: 500;
+    line-height: calc(24 / 16);
+  }
+
+  &__created-by {
+    font-weight: 300;
+    font-size: 10px;
   }
 }
