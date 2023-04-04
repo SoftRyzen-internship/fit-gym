@@ -1,5 +1,5 @@
-<div class="backdrop is-hidden" data-modal>
-  <div class="modal is-hidden">
+<div class="backdrop" data-modal>
+  <div class="modal">
     <svg class="close-btn modal__close-icon" aria-label="Close modal" data-modal-close>
       <use href="./assets/images/sprite.svg#icon-close"></use>
     </svg>
@@ -9,7 +9,7 @@
       <form class="modal__form" action="#" id="form">
         <div class="modal__form-control modal__form-control--name">
           <svg class="modal__icon-user" aria-label="user Icon" width="20" height="20">
-            <use href="assets/images/sprite.svg#icon-user"></use>
+            <use href="./assets/images/sprite.svg#name"></use>
           </svg>
           <input
             class="modal__form-input"
@@ -24,7 +24,7 @@
 
         <div class="modal__form-control">
           <svg class="modal__icon-phone" aria-label="phone icon" width="20" height="20">
-            <use href="assets/images/sprite.svg#icon-phone"></use>
+            <use href="./assets/images/sprite.svg#phone"></use>
           </svg>
           <input
             class="modal__form-input"
@@ -39,7 +39,7 @@
 
         <div class="modal__form-control">
           <svg class="modal__icon-email" aria-label="email icon" width="20" height="20">
-            <use href="assets/images/sprite.svg#icon-email"></use>
+            <use href="./assets/images/sprite.svg#email"></use>
           </svg>
           <input
             class="modal__form-input"
@@ -49,6 +49,7 @@
             name="email"
             required
           />
+          <span>Error message</span>
         </div>
 
         <button class="button--primary modal__send-btn" type="submit">Send</button>
