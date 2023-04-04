@@ -8,10 +8,12 @@
 .plans__title {
   font-size: 48px;
   line-height: 1.3;
+  letter-spacing: normal;
   margin-bottom: 40px;
 
   @include mq(tablet-only) {
     padding-left: 32px;
+    margin-bottom: 28px;
   }
 }
 
@@ -39,7 +41,7 @@
   @include mq(tablet) {
     width: 320px !important;
     background-image: linear-gradient(to bottom, #0055a6, rgba(116, 123, 255, 0.35));
-    padding: 34px 55px 32px;
+    padding: 34px 60px 32px;
   }
 
   @include mq(tablet-only) {
@@ -54,7 +56,7 @@
 
   @include mq(desktop) {
     width: 384px !important;
-    padding: 62px 82px;
+    padding: 62px 92px;
   }
 }
 
@@ -171,5 +173,7 @@
 
 .plans-prev-btn,
 .plans-next-btn {
+  width: 30px;
+  height: 22px;
   background-color: transparent;
 }

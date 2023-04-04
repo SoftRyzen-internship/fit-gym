@@ -1,9 +1,9 @@
 <section class="section contacts">
   <div class="container">
     <div class="contacts__container">
-      <div>
+      <div class="contacts__wrapper">
         <h2 class="title contacts__title">Let’s Find Your Way in Sport!</h2>
-        <p class="contacts__text">We make real results happen. Let`s find your personal trainer</p>
+        <p class="contacts__text">We make real results happen. Let`s find your <span class="contacts__text--wrap">personal trainer</span></p>
         <ul class="contacts__list">
           <li class="contacts__item">
             <svg width="20" height="20" aria-label="email" class="contacts__icon">
@@ -15,7 +15,7 @@
             <svg width="20" height="20" aria-label="building" class="contacts__icon">
               <use href="./assets/images/sprite.svg#address"></use>
             </svg>
-            <p class="contacts__data">Jl KH Samanhudi Metro Atom Plaza Bl AKS 1/11, Dki Jakarta</p>
+            <p class="contacts__data">Jl KH Samanhudi Metro Atom Plaza Bl <span class="contacts__data--wrap">AKS 1/11, Dki Jakarta</span></p>
           </li>
           <li class="contacts__item">
             <svg width="20" height="20" aria-label="phone" class="contacts__icon">
@@ -25,7 +25,32 @@
           </li>
         </ul>
       </div>
-      <form></form>
+      <form>
+        <label class="contacts__label">
+          <input placeholder="Name" class="contacts__input" />
+          <svg width="20" height="20" aria-label="person" class="contacts__labelIcon">
+            <use href="./assets/images/sprite.svg#name"></use>
+          </svg>
+        </label>
+        <label class="contacts__label">
+          <input placeholder="Email" class="contacts__input" />
+          <svg width="20" height="20" aria-label="letter" class="contacts__labelIcon">
+            <use href="./assets/images/sprite.svg#email"></use>
+          </svg>
+        </label>
+        <label class="contacts__label contacts__textarea">
+          <textarea placeholder="Message" class="contacts__input"></textarea>
+          <svg width="20" height="20" aria-label="message" class="contacts__labelIcon">
+            <use href="./assets/images/sprite.svg#message"></use>
+          </svg>
+        </label>
+        <button class="contacts__send">
+          <p class="contacts__sendText">Let’s Talk</p>
+            <svg width="20" height="14" aria-label="right arrow" class="contacts__sendIcon">
+              <use href="./assets/images/sprite.svg#arrow-right"></use>
+            </svg>
+        </button>
+      </form>
     </div>
     <ul class="contacts__socialList">
       <li class="contacts__socialItem">
