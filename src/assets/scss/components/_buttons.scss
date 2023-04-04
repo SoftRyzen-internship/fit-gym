@@ -4,8 +4,8 @@
   position: relative;
   display: inline-block;
   width: 100%;
-  padding: 20px;
-  font-weight: 600;
+  padding: 17px;
+  font-weight: 700;
   line-height: 1.62;
   color: var(--primary-txt-cl);
   background: linear-gradient(
@@ -49,8 +49,8 @@
 }
 
 .button--disabled {
-  padding: 20px;
-  font-weight: 600;
+  padding: 17px;
+  font-weight: 700;
   line-height: 1.62;
   border-radius: 12px;
   background: var(--disabled-bg);
@@ -69,7 +69,7 @@
   display: inline-block;
   width: 100%;
   padding: 19px;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.62;
   color: var(--accent-primary-gradient);
   border: solid 2px transparent;
