@@ -58,12 +58,21 @@
 }
 
 .hero__btn-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 16px;
   @include mq(tablet) {
     margin-bottom: 0;
     width: 200px;
     margin-right: 16px;
   }
+}
+
+.hero__btn-secondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero__wrapper {
