@@ -19,6 +19,10 @@
     width: 200px;
   }
 
+  &:hover {
+    box-shadow: var(--box-shadow-primary);
+  }
+
   &::before {
     content: '';
     position: absolute;
@@ -42,15 +46,26 @@
     position: relative;
     z-index: 2;
   }
+}
 
-  &:hover {
-    box-shadow: 5px 10px 30px rgba(76, 64, 247, 0.5);
+.button--disabled {
+  padding: 20px;
+  font-weight: 600;
+  line-height: 1.62;
+  border-radius: 12px;
+  background: var(--disabled-bg);
+  color: var(--disabled-cl);
+  cursor: auto;
+
+  @include mq(tablet) {
+    width: 200px;
   }
 }
 
 // Кнопка для hero
 
 .button--secondary {
+  position: relative;
   display: inline-block;
   width: 100%;
   padding: 19px;
@@ -74,30 +89,17 @@
   }
 
   &:hover {
-    box-shadow: 2px 1000px 1px #adedff inset, 5px 10px 30px rgba(76, 64, 247, 0.5);
+    border: solid 2px transparent;
+    background: var(--hover-secondary);
+    color: var(--white-bg);
+    box-shadow: var(--box-shadow-primary);
   }
-}
-
-// Кнопка для Program
-
-.button--white {
-  position: relative;
-  display: inline-block;
-  width: 100%;
-  padding: 17px;
-  font-weight: 700;
-  line-height: 1.62;
-  color: var(--primary-txt-cl);
-  background: transparent;
-  border: 2px solid var(--primary-txt-cl);
-  border-radius: 12px;
 
   &::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(253, 253, 253, 0.5);
-    box-shadow: 5px 10px 30px rgba(255, 255, 255, 0.5);
+    background: var(--hover-secondary);
     border-radius: 12px;
     z-index: 1;
     opacity: 0;
@@ -111,5 +113,25 @@
   & span {
     position: relative;
     z-index: 2;
+  }
+}
+// Кнопка для Program
+
+.button--white {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  padding: 17px;
+  font-weight: 700;
+  line-height: 1.62;
+  color: var(--primary-txt-cl);
+  background-color: transparent;
+  border: 2px solid var(--primary-txt-cl);
+  border-radius: 12px;
+  transition: background-color var(--fast) linear, box-shadow var(--fast) linear;
+
+  &:hover {
+    background-color: var(--light-bg);
+    box-shadow: var(--box-shadow-light);
   }
 }
