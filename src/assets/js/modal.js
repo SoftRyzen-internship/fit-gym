@@ -3,8 +3,10 @@ const refs = {
   backdrop: document.querySelector('[data-modal]'),
   modal: document.querySelector('.modal'),
   modalContent: document.querySelector('.modal-content'),
-  openModal: document.querySelector('[data-modal-open]'),
+  openModal: document.querySelectorAll('[data-modal-open]'),
 };
+
+console.log(refs.openModal);
 
 export function toggleModal() {
   document.body.classList.toggle('scroll-hidden');
@@ -28,4 +30,4 @@ function handleClose(e) {
 document.addEventListener('keydown', handleKey);
 refs.backdrop.addEventListener('mousedown', handleClose);
 refs.closeModalBtn.addEventListener('click', () => toggleModal());
-refs.openModal.addEventListener('click', () => toggleModal());
+Array.from(refs.openModal).map(btn => btn.addEventListener('click', () => toggleModal()));
