@@ -26,15 +26,12 @@
   perspective: 1000px;
   border-radius: 12px;
   width: 280px;
-  // height: 453px;
-  // @include mq(mobile) {
-  //   width: 440px;
-  //   height: 593px;
-  // }
+
   @include mq(tablet) {
     width: 336px;
     height: 453px;
   }
+
   @include mq(desktop) {
     width: 384px;
     height: 520px;
@@ -49,10 +46,12 @@
   transition: transform 1s;
   width: 280px;
   height: 414px;
+
   @include mq(tablet) {
     width: 336px;
-    height: 453px;
+    height: 505px;
   }
+
   @include mq(desktop) {
     width: 384px;
     height: 520px;
@@ -71,14 +70,12 @@
   border-radius: 8px;
   width: 280px;
   height: 377px;
-  // @include mq(mobile) {
-  //   width: 440px;
-  //   height: 593px;
-  // }
+
   @include mq(tablet) {
     width: 336px;
     height: 453px;
   }
+
   @include mq(desktop) {
     width: 384px;
     height: 520px;
@@ -107,17 +104,8 @@
 }
 
 .program__slick-slider .slick-slide {
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: center;
-  // align-items: center;
-
   &:not(:first-child) {
     margin-left: 32px;
-  }
-
-  @include mq(desktop) {
-    // width: 320px;
   }
 }
 
@@ -126,19 +114,9 @@
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0;
-
-  @include mq(tablet) {
-    bottom: 60px;
-  }
-
-  @include mq(desktop) {
-    bottom: 120px;
-  }
 }
 
 .program__slick-slider .slick-dots li {
@@ -156,14 +134,14 @@
 
 .program__slick-slider .slick-dots button {
   font-size: 0;
-  width: 100%;
-  height: 100%;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   background: linear-gradient(180deg, #0239fe 0%, #0285fe 100%);
 }
 
 .program__slick-slider .slick-dots .slick-active {
   position: relative;
-  height: 12px;
-  width: 12px;
+  height: 14px;
+  width: 14px;
 }
