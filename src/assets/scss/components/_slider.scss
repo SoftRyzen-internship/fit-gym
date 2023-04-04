@@ -3,11 +3,12 @@
 
   .plans & {
     @include mq(tablet) {
+      align-items: flex-end;
       gap: 32px;
-    }}
+    }
+  }
 }
 
 .slick-list {
   overflow: hidden;
 }
-

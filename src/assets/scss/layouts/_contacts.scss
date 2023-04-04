@@ -238,6 +238,7 @@
     gap: 20px;
     padding: 32px 34px;
   }
+
 }
 
 .contacts__iconWrapper {
@@ -249,10 +250,25 @@
   background-color: transparent;
   border-radius: 50%;
   border: 2px solid var(--accent-primary-gradient);
+
+  background-repeat: no-repeat;
+  background-position: center;
+
+  .contacts__socialItem:nth-child(1) & {
+    background-image: url("../images/contacts/facebook.svg");
+  }
+
+  .contacts__socialItem:nth-child(3) & {
+    background-image: url("../images/contacts/linkedin.svg");
+  }
+
+  .contacts__socialItem:nth-child(4) & {
+    background-image: url("../images/contacts/twitter.svg");
+  }
 }
 
 .contacts__socialIcon {
-  fill: var(--accent-primary-gradient);
+  display: none;
 }
 
 .contacts__socialButton:hover {
@@ -268,6 +284,7 @@
   }
 
   .contacts__socialIcon {
+    display: block;
     fill: var(--primary-txt-cl);
   }
 }
