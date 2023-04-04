@@ -5,10 +5,39 @@ const contactsName = document.getElementById('contacts-name');
 const contactsEmail = document.getElementById('contacts-email');
 const contactsMessage = document.getElementById('contacts-message');
 
+const subscribeForm = document.getElementById('subscribe-form');
+const subscribeBtn = document.querySelector('.subscribe__button');
+
+const subscribeEmail = document.getElementById('subscribe-email');
+
 const isContactsValidValues = {
   contactsName: false,
   contactsEmail: false,
 };
+
+const isSubscribeValidValues = {
+  subscribeEmail: false,
+}
+
+subscribeEmail.addEventListener('input', e => {
+  const isValidName = checkInputEmail(e.target.value, subscribeEmail);
+
+  if (isValidName) {
+    isSubscribeValidValues.subscribeEmail = true;
+    subscribeBtn.removeAttribute('disabled');
+    subscribeBtn.classList.remove('subscribe__disabled');
+  } else {
+    isSubscribeValidValues.subscribeEmail = false;
+    subscribeBtn.setAttribute('disabled', 'disabled');
+    subscribeBtn.classList.add('subscribe__disabled');
+  }
+});
+
+subscribeForm.addEventListener('submit', e => {
+  e.preventDefault();
+  console.log({ email: subscribeEmail.value });
+  e.currentTarget.reset();
+});
 
 contactsForm.addEventListener('input', e => {
   if (e.target.id === 'contacts-name') {
@@ -23,7 +52,7 @@ contactsForm.addEventListener('input', e => {
   }
 
   if (e.target.id === 'contacts-email') {
-    const isValidEmail = checkInputEmail(e.target.value);
+    const isValidEmail = checkInputEmail(e.target.value, contactsEmail);
 
     if (isValidEmail) {
       isContactsValidValues.contactsEmail = true;
@@ -52,6 +81,10 @@ contactsForm.addEventListener('submit', e => {
   e.currentTarget.reset();
   isContactsValidValues.contactsName = false;
   isContactsValidValues.contactsEmail = false;
+  contactsBtn.setAttribute('disabled', 'disabled');
+  contactsBtn.classList.add('button--disabled');
+  const array = contactsForm.querySelectorAll('.success');
+  Array.from(array).map(item => item.classList.remove('success'));
 });
 
 // CHECK INPUT NAME
@@ -87,7 +120,7 @@ const checkInputName = name => {
 
 // CHECK INPUT EMAIL
 const emailRe = /^([a-zA-Z0-9])+([a-zA-Z0-9._-]+)@[a-zA-Z0-9]+([.-]?[a-zA-Z0-9]+)\.[a-zA-Z]{2,}$/;
-const checkInputEmail = email => {
+const checkInputEmail = (email, inputEmail) => {
   let isValidEmail = false;
   // Get values from the inputs
   const emailValue = email.trim();
@@ -96,14 +129,14 @@ const checkInputEmail = email => {
   if (!emailValue) {
     //Show error
     //Add error class
-    setErrorFor(contactsEmail, 'Error(field is required)');
+    setErrorFor(inputEmail, 'Error(field is required)');
   } else if (!emailValue.match(emailRe)) {
     //Show error
     //Add error class
-    setErrorFor(contactsEmail, 'Error(not valid email)');
+    setErrorFor(inputEmail, 'Error(not valid email)');
   } else {
     //Add succes class
-    setSuccessFor(contactsEmail);
+    setSuccessFor(inputEmail);
     isValidEmail = true;
   }
 
