@@ -185,6 +185,10 @@
   @include mq(tablet) {
     width: 200px;
   }
+
+  & svg {
+    stroke: var(--primary-txt-cl);
+  }
 }
 
 .contacts__socialList {
@@ -194,7 +198,7 @@
 
   @include mq(tablet) {
     grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
+    gap: 8px;
   }
 
   @include mq(desktop) {
@@ -217,7 +221,7 @@
   padding: 12px;
 
   @include mq(tablet) {
-    padding: 20px 25px;
+    padding: 20px 15px 20px 20px;
   }
 
   @include mq(desktop) {
