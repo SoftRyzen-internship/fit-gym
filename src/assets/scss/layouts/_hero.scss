@@ -58,8 +58,6 @@
 }
 
 .hero__btn-primary {
-  position: relative;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -71,11 +69,11 @@
   }
 
   & svg {
-    position: absolute;
-    top: 28px;
-    right: 32px;
-    z-index: 10;
+    position: relative;
     stroke: #fdfdfd;
+    z-index: 100;
+    @include mq(tablet) {
+    }
   }
 }
 
