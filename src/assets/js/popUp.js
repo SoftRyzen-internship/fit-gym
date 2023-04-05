@@ -1,4 +1,4 @@
-export function handleClick({ triggerParent, trigger, content }) {
+function handleClick({ triggerParent, trigger, content }) {
   const overlay = document.querySelector('.pop-up__overlay');
   const closeBtn = document.querySelector('.pop-up__icon');
   const contentBlock = document.querySelector('.pop-up__description');
@@ -45,10 +45,4 @@ handleClick({
   trigger: '.footer__social-link',
   content: `<p class="pop-up__content">Sorry</p>
     <p class="pop-up__content">This page is in progress</p>`,
-});
-
-handleClick({
-  triggerParent: document.querySelector('.subscribe__form'),
-  trigger: '.subscribe__button',
-  content: `<p class="pop-up__content-subscribe">Successful subscribe!</p>`,
 });
