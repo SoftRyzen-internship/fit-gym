@@ -13,6 +13,9 @@
 }
 
 .overview__image {
+  display: flex;
+  justify-content: center;
+
   @include mq(mobile-only) {
     margin-bottom: 40px;
   }
