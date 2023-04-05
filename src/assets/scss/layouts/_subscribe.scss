@@ -99,6 +99,17 @@
   position: relative;
 }
 
+.subscribe__form.error .contacts__error {
+  position: absolute;
+  bottom: -24px;
+  left: 28px;
+  display: block;
+  color: var(--error-cl);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.43;
+}
+
 .subscribe__formText {
   font-weight: 500;
   line-height: 1.5;
@@ -155,4 +166,8 @@
   & svg {
     stroke: var(--secondary-txt-cl);
   }
+}
+
+.subscribe__disabled {
+  cursor: auto;
 }
