@@ -167,27 +167,6 @@
   &::placeholder {
     color: var(--secondary-txt-cl);
   }
-
-  // .modal__form-control.success & {
-  //   background-repeat: no-repeat;
-  //   background-position: top 10px right 27px;
-
-  //   @include mq(tablet) {
-  //     background-position: top 22px right 27px;
-  //   }
-  // }
-
-  // .modal__form-control.success &--name {
-  //   background-image: url('../images/hero/svg/name.svg');
-  // }
-
-  // .modal__form-control.success &--phone {
-  //   background-image: url('../images/hero/svg/phone.svg');
-  // }
-
-  // .modal__form-control.success &--email {
-  //   background-image: url('../images/hero/svg/email.svg');
-  // }
 }
 
 .modal__send-btn {
