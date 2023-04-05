@@ -116,7 +116,7 @@
   height: 120px;
   margin-top: 60px;
   height: 302px;
-  background: linear-gradient(180deg, #0239fe 0%, #0285fe 100%);
+  background: linear-gradient(180deg, var(--accent-cl) 0%, var(--accent-secondary-gradient) 100%);
 
   @include mq(tablet) {
     display: flex;
