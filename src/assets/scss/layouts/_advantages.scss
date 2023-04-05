@@ -87,6 +87,8 @@
   }
 
   @include mq(tablet) {
+    display: flex;
+    gap: 16px;
     justify-content: flex-start;
   }
 }
