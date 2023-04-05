@@ -5,13 +5,16 @@ const sendBtn = document.querySelector('.modal__send-btn');
 
 const username = document.getElementById('name');
 const phone = document.getElementById('telephone');
+const email = document.getElementById('email');
 
 // SET DISABLED BUTTON
-sendBtn.setAttribute('disabled', 'disabled');
+sendBtn.classList.remove('button--primary');
+sendBtn.classList.add('button--disabled');
 
 const isValidValues = {
   name: false,
   phone: false,
+  email: false,
 };
 
 form.addEventListener('input', e => {
@@ -23,7 +26,9 @@ form.addEventListener('input', e => {
     }
     if (!isValidName) {
       isValidValues.name = false;
-      sendBtn.setAttribute('disabled', 'disabled');
+
+      sendBtn.classList.remove('button--primary');
+      sendBtn.classList.add('button--disabled');
     }
   }
 
@@ -35,28 +40,44 @@ form.addEventListener('input', e => {
     }
     if (!isValidPhone) {
       isValidValues.phone = false;
-      sendBtn.setAttribute('disabled', 'disabled');
+
+      sendBtn.classList.remove('button--primary');
+      sendBtn.classList.add('button--disabled');
+    }
+  }
+
+  if (e.target.id === 'email') {
+    const isValidEmail = checkInputEmail(e.target.value);
+
+    if (isValidEmail) {
+      isValidValues.email = true;
+    }
+    if (!isValidEmail) {
+      isValidValues.email = false;
+
+      sendBtn.classList.remove('button--primary');
+      sendBtn.classList.add('button--disabled');
     }
   }
 
   // REMOVE DISABLED BUTTON
-  if (isValidValues.name === true && isValidValues.phone === true) {
-    sendBtn.removeAttribute('disabled');
+  if (isValidValues.name === true && isValidValues.phone === true && isValidValues.email === true) {
+    sendBtn.classList.add('button--primary');
+    sendBtn.classList.remove('button--disabled');
   }
 });
 
 form.addEventListener('submit', e => {
   e.preventDefault();
 
-  console.log('submit');
-
-  if (isValidValues.name === true && isValidValues.phone === true) {
+  if (isValidValues.name === true && isValidValues.phone === true && isValidValues.email === true) {
     e.currentTarget.reset();
-    // modalContent.innerHTML = renderModalMarkup('form');
+
     toggleModal();
 
     isValidValues.name = false;
     isValidValues.phone = false;
+    isValidValues.email = false;
   }
 });
 
@@ -117,6 +138,29 @@ const checkInputPhone = phoneInput => {
   }
 
   return isValidPhone;
+};
+
+// CHECK INPUT EMAIL
+const checkInputEmail = emailInput => {
+  let isValidEmail = false;
+  // Get values from the inputs
+  const emailValue = emailInput.trim();
+  // VALIDATION EMAIL
+  const reg = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  if (!emailValue) {
+    //Show error
+    //Add error class
+    setErrorFor(email, 'Error(field is required)');
+  } else if (!emailValue.match(reg)) {
+    //Add error class
+    setErrorFor(email, 'Error(invalid email)');
+  } else {
+    //Add succes class
+    setSuccessFor(email);
+    isValidEmail = true;
+  }
+
+  return isValidEmail;
 };
 
 // SET CLASSNAME FOR ERROR

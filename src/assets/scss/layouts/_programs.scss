@@ -12,7 +12,14 @@
 
 .programs__container {
   @include mq(mobile-only) {
-    max-width: 320px;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+  @include mq(mobile) {
+    max-width: 440px;
+  }
+  @include mq(tablet) {
+    max-width: 100%;
   }
 }
 
@@ -26,6 +33,10 @@
   perspective: 1000px;
   border-radius: 12px;
   width: 280px;
+
+  @include mq(mobile) {
+    width: 440px;
+  }
 
   @include mq(tablet) {
     width: 336px;
@@ -44,16 +55,6 @@
   transform-style: preserve-3d;
   transform-origin: center right;
   transition: transform 1s;
-  width: 280px;
-
-  @include mq(tablet) {
-    width: 336px;
-  }
-
-  @include mq(desktop) {
-    width: 384px;
-    height: 520px;
-  }
 }
 
 .card.flip {
@@ -66,18 +67,11 @@
   position: absolute;
   top: 0;
   border-radius: 8px;
-  width: 280px;
-  height: 377px;
+  height: 100%;
+}
 
-  @include mq(tablet) {
-    width: 336px;
-    height: 453px;
-  }
-
-  @include mq(desktop) {
-    width: 384px;
-    height: 520px;
-  }
+.programs__img {
+  width: 100%;
 }
 
 .back {
@@ -88,6 +82,12 @@
     var(--accent-secondary-gradient) 100%
   );
   padding: 20px;
+  @include mq(mobile) {
+    padding: 40px;
+  }
+  @include mq(tablet) {
+    padding: 20px;
+  }
 }
 
 .card__title {
