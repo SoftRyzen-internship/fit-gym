@@ -1,9 +1,17 @@
-function handleClick({ triggerParent, trigger, content }) {
-    const overlay = document.querySelector('.pop-up__overlay');
-    const closeBtn = document.querySelector('.pop-up__icon');
-    const contentBlock = document.querySelector('.pop-up__description');
-    const popUp = document.querySelector('.pop-up');
-    
+export function handleClick({ triggerParent, trigger, content }) {
+  const overlay = document.querySelector('.pop-up__overlay');
+  const closeBtn = document.querySelector('.pop-up__icon');
+  const contentBlock = document.querySelector('.pop-up__description');
+  const popUp = document.querySelector('.pop-up');
+
+  if (trigger === '.modal__send-btn') {
+    popUp.classList.remove('pop-up--is-hidden');
+    document.body.style.overflow = 'hidden';
+    contentBlock.innerHTML = content;
+
+    return;
+  }
+
   triggerParent.addEventListener('click', e => {
     if (e.target.closest(trigger)) {
       popUp.classList.remove('pop-up--is-hidden');
@@ -40,7 +48,7 @@ handleClick({
 });
 
 handleClick({
-    triggerParent: document.querySelector('.subscribe__form'),
-    trigger: '.subscribe__button',
-    content: `<p class="pop-up__content-subscribe">Successful subscribe!</p>`
-  });
+  triggerParent: document.querySelector('.subscribe__form'),
+  trigger: '.subscribe__button',
+  content: `<p class="pop-up__content-subscribe">Successful subscribe!</p>`,
+});

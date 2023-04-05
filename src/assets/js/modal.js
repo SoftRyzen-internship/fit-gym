@@ -6,8 +6,6 @@ const refs = {
   openModal: document.querySelectorAll('[data-modal-open]'),
 };
 
-console.log(refs.openModal);
-
 export function toggleModal() {
   document.body.classList.toggle('scroll-hidden');
   refs.backdrop.classList.toggle('is-hidden');
@@ -16,7 +14,9 @@ export function toggleModal() {
 
 function handleKey(e) {
   if (e.code === 'Escape') {
-    toggleModal();
+    refs.backdrop.classList.add('is-hidden');
+    refs.modal.classList.add('is-hidden');
+    document.body.classList.remove('scroll-hidden');
   }
 
   return;
