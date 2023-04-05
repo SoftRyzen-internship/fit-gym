@@ -35,8 +35,12 @@ subscribeEmail.addEventListener('input', e => {
 
 subscribeForm.addEventListener('submit', e => {
   e.preventDefault();
+  if (!isSubscribeValidValues.subscribeEmail) return;
   console.log({ email: subscribeEmail.value });
   e.currentTarget.reset();
+  e.currentTarget.classList.remove('success');
+  subscribeBtn.setAttribute('disabled', 'disabled');
+  subscribeBtn.classList.add('subscribe__disabled');
 });
 
 contactsForm.addEventListener('input', e => {
@@ -59,6 +63,17 @@ contactsForm.addEventListener('input', e => {
     }
     if (!isValidEmail) {
       isContactsValidValues.contactsEmail = false;
+    }
+  }
+
+  if (e.target.id === 'contacts-message') {
+    const isValidEmail = e.target.value.length;
+
+    if (isValidEmail) {
+      contactsMessage.parentElement.classList.add('success');
+    }
+    if (!isValidEmail) {
+      contactsMessage.parentElement.classList.remove('success');
     }
   }
 
