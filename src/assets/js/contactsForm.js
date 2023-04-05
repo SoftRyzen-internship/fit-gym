@@ -1,5 +1,7 @@
+import { handleClick } from "./popUp";
+
 const contactsForm = document.getElementById('contacts-form');
-const contactsBtn = document.querySelector('.contacts__send');
+const contactsBtn = document.querySelector('.contacts__buttonCheck');
 
 const contactsName = document.getElementById('contacts-name');
 const contactsEmail = document.getElementById('contacts-email');
@@ -35,9 +37,17 @@ subscribeEmail.addEventListener('input', e => {
 
 subscribeForm.addEventListener('submit', e => {
   e.preventDefault();
-  if (!isSubscribeValidValues.subscribeEmail) return;
+  if (!isSubscribeValidValues.subscribeEmail) {return};
+  console.log("Hello");
+  console.log(isSubscribeValidValues.subscribeEmail)
+  handleClick({
+    triggerParent: subscribeForm,
+    trigger: '.subscribe__button',
+    content: `<p class="pop-up__content-subscribe">Successful subscribe!</p>`
+  });
   console.log({ email: subscribeEmail.value });
   e.currentTarget.reset();
+  isSubscribeValidValues.subscribeEmail = false;
   e.currentTarget.classList.remove('success');
   subscribeBtn.setAttribute('disabled', 'disabled');
   subscribeBtn.classList.add('subscribe__disabled');
@@ -78,11 +88,14 @@ contactsForm.addEventListener('input', e => {
   }
 
   if (isContactsValidValues.contactsName === true && isContactsValidValues.contactsEmail === true) {
+    console.log("remove classlist")
     contactsBtn.removeAttribute('disabled');
     contactsBtn.classList.remove('button--disabled');
+    contactsBtn.classList.add('button--primary');
   } else {
     contactsBtn.setAttribute('disabled', 'disabled');
     contactsBtn.classList.add('button--disabled');
+    contactsBtn.classList.remove('button--primary');
   }
 });
 
@@ -98,6 +111,7 @@ contactsForm.addEventListener('submit', e => {
   isContactsValidValues.contactsEmail = false;
   contactsBtn.setAttribute('disabled', 'disabled');
   contactsBtn.classList.add('button--disabled');
+  contactsBtn.classList.remove('button--primary');
   const array = contactsForm.querySelectorAll('.success');
   Array.from(array).map(item => item.classList.remove('success'));
 });
