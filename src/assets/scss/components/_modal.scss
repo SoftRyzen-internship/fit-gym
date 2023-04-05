@@ -150,7 +150,11 @@
 
   .modal__form-control.success & {
     background-repeat: no-repeat;
-    background-position: top 22px right 27px;
+    background-position: top 10px right 27px;
+
+    @include mq(tablet) {
+      background-position: top 22px right 27px;
+    }
   }
 
   .modal__form-control.success &--name {
@@ -167,6 +171,10 @@
 }
 
 .modal__send-btn {
+  @include mq(mobile-only) {
+    width: 100%;
+  }
+
   display: block;
   margin: 0 auto;
   margin-top: 32px;
