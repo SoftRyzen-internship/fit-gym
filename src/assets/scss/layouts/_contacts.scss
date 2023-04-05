@@ -97,11 +97,10 @@
   display: block;
   border-radius: 11px;
   border: 2px solid var(--accent-cl);
+  box-shadow: var(--box-shadow-success);
+  transition: border var(--fast) linear, box-shadow var(--fast) linear;
 
   margin-bottom: 24px;
-  box-shadow: var(--box-shadow-success);
-
-  transition: border var(--fast) linear, box-shadow var(--fast) linear;
 
   @include mq(desktop) {
     margin-bottom: 40px;
@@ -330,7 +329,7 @@
   }
 
   .contacts__socialItem:nth-child(2) & {
-    background-image: url('../images/instagram.svg');
+    background-image: url('../images/contacts/instagram.svg');
   }
 
   .contacts__socialItem:nth-child(3) & {
