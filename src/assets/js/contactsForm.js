@@ -99,6 +99,7 @@ contactsForm.addEventListener('submit', e => {
     email: contactsEmail.value,
     message: contactsMessage.value,
   });
+  handlePopUp(`<p class="pop-up__content-subscribe">Successful subscribe!</p>`);
   e.currentTarget.reset();
   isContactsValidValues.contactsName = false;
   isContactsValidValues.contactsEmail = false;
