@@ -1,28 +1,24 @@
-function handleClick({ triggerParent, trigger, content }) {
+function handlePopUp(content) {
   const overlay = document.querySelector('.pop-up__overlay');
   const closeBtn = document.querySelector('.pop-up__icon');
   const contentBlock = document.querySelector('.pop-up__description');
   const popUp = document.querySelector('.pop-up');
   const scrollWidth = window.innerWidth - document.documentElement.clientWidth + 'px';
 
-  function returnPadding () {
+  function returnPadding() {
     setTimeout(() => {
       document.documentElement.style.overflow = '';
       document.body.style.paddingRight = '';
     }, 300);
   }
 
-  triggerParent.addEventListener('click', e => {
-    if (e.target.closest(trigger)) {
-      popUp.classList.remove('pop-up--is-hidden');
-      document.documentElement.style.overflow = 'hidden';
+  popUp.classList.remove('pop-up--is-hidden');
+  document.documentElement.style.overflow = 'hidden';
 
-      if (window.innerWidth >= 1440) {
-        document.body.style.paddingRight = scrollWidth;
-      }
-      contentBlock.innerHTML = content;
-    }
-  });
+  if (window.innerWidth >= 1440) {
+    document.body.style.paddingRight = scrollWidth;
+  }
+  contentBlock.innerHTML = content;
 
   overlay.addEventListener('click', e => {
     if (!e.target.classList.contains('pop-up__overlay')) return;
@@ -47,15 +43,21 @@ function handleClick({ triggerParent, trigger, content }) {
   window.addEventListener('keydown', closeByEsc);
 }
 
-handleClick({
-  triggerParent: document.querySelector('.footer__social-list'),
-  trigger: '.footer__social-link',
-  content: `<p class="pop-up__content">Sorry</p>
-    <p class="pop-up__content">This page is in progress</p>`,
-});
-
-handleClick({
+/* handleClick({
   triggerParent: document.querySelector('.subscribe__form'),
   trigger: '.subscribe__button',
   content: `<p class="pop-up__content-subscribe">Successful subscribe!</p>`,
-});
+}); */
+
+function handleIconsClick() {
+  const iconsList = document.querySelector('.footer__social-list');
+
+  iconsList.addEventListener('click', e => {
+    if (e.target.closest('.footer__social-link')) {
+      handlePopUp(`<p class="pop-up__content">Sorry</p>
+    <p class="pop-up__content">This page is in progress</p>`);
+    }
+  });
+}
+
+handleIconsClick();
