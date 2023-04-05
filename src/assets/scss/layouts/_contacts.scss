@@ -231,6 +231,17 @@
 }
 
 .contacts__send {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+
+  .contacts__container & {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.44;
+  }
+
   & svg {
     stroke: var(--primary-txt-cl);
   }
@@ -293,7 +304,7 @@
   justify-content: center;
   background-color: transparent;
   border-radius: 50%;
-  border: 2px solid var(--accent-primary-gradient);
+  // border: 2px solid var(--accent-primary-gradient);
 
   background-repeat: no-repeat;
   background-position: center;
