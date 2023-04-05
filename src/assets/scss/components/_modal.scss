@@ -11,10 +11,10 @@
   background: rgba(0, 0, 0, 0.7);
   z-index: 999;
   overflow: auto;
-  transition: opacity 0.4s linear, visibility 0.2s linear;
+  transition: opacity var(--slow) linear, visibility var(--fast) linear;
 
   &--menu {
-    background: linear-gradient(180deg, #000000 0%, #0575dc 100%);
+    background: linear-gradient(180deg, var(--black-bg) 0%, #0575dc 100%);
   }
 
   &.is-hidden {
@@ -36,11 +36,11 @@
   padding: 32px 8px;
   width: 280px;
 
-  background-color: #000000;
+  background-color: var(--black-bg);
   border-radius: 20px;
-  border: 2px solid #023dfe;
+  border: 2px solid var(--accent-cl);
 
-  transition: transform 0.3s linear, opacity 0.4s linear, visibility 0.4s linear;
+  transition: transform 0.3s linear, opacity var(--slow) linear, visibility var(--slow) linear;
 
   &.is-hidden {
     visibility: hidden;
@@ -127,14 +127,14 @@
   outline: none;
 
   background-color: #010a2e;
-  border: 2px solid #023dfe;
+  border: 2px solid var(--accent-cl);
   border-radius: 8px;
-  box-shadow: 0px 8px 24px rgba(76, 64, 247, 0.5);
+  box-shadow: 0px 8px 24px var(--box-shadow);
 
   font-weight: 400;
   font-size: 16px;
   line-height: 2;
-  color: #fdfdfd;
+  color: var(--primary-txt-cl);
 
   @include mq(tablet) {
     padding: 8px 28px;
@@ -145,7 +145,7 @@
   }
 
   &::placeholder {
-    color: #abafc7;
+    color: var(--secondary-txt-cl);
   }
 
   .modal__form-control.success & {
@@ -191,7 +191,7 @@
   visibility: visible;
   display: block;
   width: 303px;
-  color: #e21e4d;
+  color: var(--error-cl);
 
   font-size: 12px;
   line-height: 1.7;
@@ -209,9 +209,9 @@
 }
 
 .modal__form-control.error input {
-  border-color: #e21e4d;
-  color: #e21e4d;
-  box-shadow: 0px 8px 24px rgba(226, 30, 77, 0.5);
+  border-color: var(--error-cl);
+  color: var(--error-cl);
+  box-shadow: 0px 8px 24px var(--box-shadow-error);
 }
 
 .modal__form-control.success input {
