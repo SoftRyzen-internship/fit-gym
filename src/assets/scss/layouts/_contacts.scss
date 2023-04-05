@@ -99,7 +99,9 @@
   border: 2px solid var(--accent-cl);
   padding: 12px 53px 12px 28px;
   margin-bottom: 24px;
-  box-shadow: 0px 8px 24px rgba(76, 64, 247, 0.5);
+  box-shadow: var(--box-shadow-success);
+
+  transition: border var(--fast) linear, box-shadow var(--fast) linear;
 
   @include mq(desktop) {
     padding: 18px 53px 18px 28px;
@@ -108,7 +110,7 @@
 
   &.error {
     border: 2px solid var(--error-cl);
-    box-shadow: 0px 8px 24px rgba(226, 30, 77, 0.5);
+    box-shadow: var(--box-shadow-error);
   }
 
   &.success {
@@ -241,9 +243,18 @@
     font-size: 18px;
     line-height: 1.44;
   }
+}
 
-  & svg {
+.contacts__sendIcon {
+  position: relative;
+  z-index: 100;
+
+  .contacts__send.button--primary & {
     stroke: var(--primary-txt-cl);
+  }
+
+  .contacts__send.button--disabled & {
+    stroke: var(--secondary-txt-cl);
   }
 }
 
@@ -281,6 +292,8 @@
   background-color: var(--secondary-bg);
   box-shadow: -8px 12px 50px rgba(76, 64, 247, 0.12);
 
+  transition: box-shadow var(--fast) linear;
+
   @media screen and (min-width: 360px) {
     gap: 12px;
     padding: 12px;
@@ -304,7 +317,7 @@
   justify-content: center;
   background-color: transparent;
   border-radius: 50%;
-  // border: 2px solid var(--accent-primary-gradient);
+  border: 2px solid var(--accent-primary-gradient);
 
   background-repeat: no-repeat;
   background-position: center;

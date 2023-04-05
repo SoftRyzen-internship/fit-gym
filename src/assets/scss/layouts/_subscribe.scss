@@ -142,18 +142,20 @@
   box-shadow: 0px 8px 50px #3123f8;
   padding: 20px 53px 20px 28px;
 
+  transition: box-shadow var(--fast) linear, border var(--fast) linear;
+
   @include mq(tablet) {
     line-height: 1.78;
   }
 
   .subscribe__form.error & {
     border: 2px solid var(--error-cl);
-    box-shadow: 0px 8px 24px rgba(226, 30, 77, 0.5);
+    box-shadow: var(--box-shadow-error);
   }
 
   .subscribe__form.success & {
     border: 2px solid var(--accent-cl);
-    box-shadow: 0px 8px 24px rgba(76, 64, 247, 0.5);
+    box-shadow: var(--box-shadow-success);
   }
 
   &::placeholder {
