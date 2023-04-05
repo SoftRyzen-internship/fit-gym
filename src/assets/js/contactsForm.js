@@ -1,4 +1,4 @@
-import { handleClick } from "./popUp";
+import { handlePopUp } from "./popUp";
 
 const contactsForm = document.getElementById('contacts-form');
 const contactsBtn = document.querySelector('.contacts__send');
@@ -38,11 +38,7 @@ subscribeEmail.addEventListener('input', e => {
 subscribeForm.addEventListener('submit', e => {
   e.preventDefault();
   if (!isSubscribeValidValues.subscribeEmail) {return};
-  handleClick({
-    triggerParent: subscribeForm,
-    trigger: '.subscribe__button',
-    content: `<p class="pop-up__content-subscribe">Successful subscribe!</p>`
-  });
+  handlePopUp(`<p class="pop-up__content-subscribe">Successful subscribe!</p>`);
   console.log({ email: subscribeEmail.value });
   e.currentTarget.reset();
   isSubscribeValidValues.subscribeEmail = false;
@@ -103,6 +99,7 @@ contactsForm.addEventListener('submit', e => {
     email: contactsEmail.value,
     message: contactsMessage.value,
   });
+  handlePopUp(`<p class="pop-up__content-subscribe">Successful subscribe!</p>`);
   e.currentTarget.reset();
   isContactsValidValues.contactsName = false;
   isContactsValidValues.contactsEmail = false;

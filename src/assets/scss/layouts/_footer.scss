@@ -35,6 +35,7 @@
     @include mq(desktop) {
       width: 308px;
       margin: 0 auto;
+      z-index: 5;
     }
 
     &::before {
