@@ -1,4 +1,4 @@
-import { handleClick } from './popUp';
+import { handlePopUp } from './popUp';
 
 import { toggleModal } from './modal';
 
@@ -77,14 +77,13 @@ form.addEventListener('submit', e => {
 
     toggleModal();
 
-    handleClick({
-      triggerParent: document.querySelector('.modal__form'),
-      trigger: '.modal__send-btn',
-      content: `
+    setTimeout(() => {
+      handlePopUp(`
       <p class="pop-up__content-subscribe">Sent</p>
       <p class="pop-up__content-subscribe">We will contact you soon!</p>
-      `,
-    });
+      `);
+    },500)
+    
 
     isValidValues.name = false;
     isValidValues.phone = false;

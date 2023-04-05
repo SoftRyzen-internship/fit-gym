@@ -8,16 +8,13 @@ export function handlePopUp(content) {
   function returnPadding() {
     setTimeout(() => {
       document.documentElement.style.overflow = '';
-      document.body.style.paddingRight = '';
+      document.documentElement.style.paddingRight = '';
     }, 300);
   }
 
   popUp.classList.remove('pop-up--is-hidden');
   document.documentElement.style.overflow = 'hidden';
-
-  if (window.innerWidth >= 1440) {
-    document.body.style.paddingRight = scrollWidth;
-  }
+  document.documentElement.style.paddingRight = scrollWidth;
   contentBlock.innerHTML = content;
 
   overlay.addEventListener('click', e => {
@@ -42,12 +39,6 @@ export function handlePopUp(content) {
   }
   window.addEventListener('keydown', closeByEsc);
 }
-
-/* handleClick({
-  triggerParent: document.querySelector('.subscribe__form'),
-  trigger: '.subscribe__button',
-  content: `<p class="pop-up__content-subscribe">Successful subscribe!</p>`,
-}); */
 
 function handleIconsClick() {
   const iconsList = document.querySelector('.footer__social-list');
