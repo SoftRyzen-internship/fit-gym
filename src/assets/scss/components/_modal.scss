@@ -190,6 +190,7 @@
   visibility: visible;
   display: block;
   width: 303px;
+  margin-left: 28px;
   color: var(--error-cl);
 
   font-size: 12px;
@@ -210,7 +211,7 @@
 .modal__form-control.error input {
   border-color: var(--error-cl);
   color: var(--error-cl);
-  box-shadow: 0px 8px 24px var(--box-shadow-error);
+  box-shadow: var(--box-shadow-error);
 }
 
 .modal__form-control.success input {
