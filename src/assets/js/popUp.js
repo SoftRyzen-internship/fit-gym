@@ -1,13 +1,25 @@
 function handleClick({ triggerParent, trigger, content }) {
-    const overlay = document.querySelector('.pop-up__overlay');
-    const closeBtn = document.querySelector('.pop-up__icon');
-    const contentBlock = document.querySelector('.pop-up__description');
-    const popUp = document.querySelector('.pop-up');
-    
+  const overlay = document.querySelector('.pop-up__overlay');
+  const closeBtn = document.querySelector('.pop-up__icon');
+  const contentBlock = document.querySelector('.pop-up__description');
+  const popUp = document.querySelector('.pop-up');
+  const scrollWidth = window.innerWidth - document.documentElement.clientWidth + 'px';
+
+  function returnPadding () {
+    setTimeout(() => {
+      document.documentElement.style.overflow = '';
+      document.body.style.paddingRight = '';
+    }, 300);
+  }
+
   triggerParent.addEventListener('click', e => {
     if (e.target.closest(trigger)) {
       popUp.classList.remove('pop-up--is-hidden');
-      document.body.style.overflow = 'hidden';
+      document.documentElement.style.overflow = 'hidden';
+
+      if (window.innerWidth >= 1440) {
+        document.body.style.paddingRight = scrollWidth;
+      }
       contentBlock.innerHTML = content;
     }
   });
@@ -15,18 +27,21 @@ function handleClick({ triggerParent, trigger, content }) {
   overlay.addEventListener('click', e => {
     if (!e.target.classList.contains('pop-up__overlay')) return;
     popUp.classList.add('pop-up--is-hidden');
-    document.body.style.overflow = '';
+
+    returnPadding();
   });
 
   closeBtn.addEventListener('click', () => {
     popUp.classList.add('pop-up--is-hidden');
-    document.body.style.overflow = '';
+
+    returnPadding();
   });
 
   function closeByEsc(e) {
     if (e.code === 'Escape') {
       popUp.classList.add('pop-up--is-hidden');
-      document.body.style.overflow = '';
+
+      returnPadding();
     }
   }
   window.addEventListener('keydown', closeByEsc);
@@ -40,7 +55,7 @@ handleClick({
 });
 
 handleClick({
-    triggerParent: document.querySelector('.subscribe__form'),
-    trigger: '.subscribe__button',
-    content: `<p class="pop-up__content-subscribe">Successful subscribe!</p>`
-  });
+  triggerParent: document.querySelector('.subscribe__form'),
+  trigger: '.subscribe__button',
+  content: `<p class="pop-up__content-subscribe">Successful subscribe!</p>`,
+});
