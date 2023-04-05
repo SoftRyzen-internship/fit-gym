@@ -94,17 +94,17 @@
 
 .contacts__label {
   position: relative;
+  overflow: hidden;
   display: block;
   border-radius: 11px;
   border: 2px solid var(--accent-cl);
-  padding: 12px 53px 12px 28px;
+
   margin-bottom: 24px;
   box-shadow: var(--box-shadow-success);
 
   transition: border var(--fast) linear, box-shadow var(--fast) linear;
 
   @include mq(desktop) {
-    padding: 18px 53px 18px 28px;
     margin-bottom: 40px;
   }
 
@@ -128,37 +128,40 @@
   }
 }
 
-.contacts__textarea {
-  padding: 15px 53px 15px 28px;
-
-  @include mq(desktop) {
-    padding: 18px 53px 18px 28px;
-  }
-}
-
 .contacts__input {
   width: 100%;
+  height: 100%;
   background-color: transparent;
   outline: none;
   border: none;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.3;
-  padding: 0;
   color: var(--primary-txt-cl);
 
+  padding: 12px 53px 12px 28px;
+
   @include mq(desktop) {
+    padding: 18px 53px 18px 28px;
     font-size: 18px;
     line-height: 1.78;
   }
 
   .contacts__textarea & {
-    height: 104px;
+    padding: 15px 53px 15px 28px;
     resize: none;
 
     @include mq(desktop) {
-      height: 156px;
+      padding: 18px 53px 18px 28px;
     }
+  }
+}
+
+.contacts__textarea {
+  height: 134px;
+
+  @include mq(desktop) {
+    height: 186px;
   }
 }
 
@@ -181,7 +184,7 @@
   background-position: center;
 
   .contacts__textarea & {
-    top: 17px;
+    top: 14px;
     transform: translateY(0%);
 
     @include mq(desktop) {
