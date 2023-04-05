@@ -1,24 +1,20 @@
-{% set lang = "pl" %} {% set title = "New Project" %}
+{% set lang = "pl" %} {% set title = "FitGYM" %}
 
 <!DOCTYPE html>
 <html lang="{{ lang }}">
+  <head>
+    {%include 'head.html' %}
+  </head>
 
-<head>
-  {%include 'head.html' %}
-</head>
+  <body>
+    {% include 'gtm.html' %}
 
-<body>
-  {% include 'gtm.html' %}
+    <div class="page">{% block content %} {% endblock %}</div>
 
-  <div class="page">{% block content %} {% endblock %}</div>
-
-  {% include 'modal.html' %}
-  <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-  <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-  <script
-    src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
-  ></script>
-  <script src="assets/js/app.js"></script>
-</body>
-
+    {% include 'modal.html' %}
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="assets/js/app.js"></script>
+  </body>
 </html>
