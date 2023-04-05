@@ -4,8 +4,8 @@
   position: relative;
   display: inline-block;
   width: 100%;
-  padding: 20px;
-  font-weight: 600;
+  padding: 17px;
+  font-weight: 700;
   line-height: 1.62;
   color: var(--primary-txt-cl);
   background: linear-gradient(
@@ -17,6 +17,10 @@
 
   @include mq(tablet) {
     width: 200px;
+  }
+
+  &:hover {
+    box-shadow: var(--box-shadow-primary);
   }
 
   &::before {
@@ -44,13 +48,28 @@
   }
 }
 
+.button--disabled {
+  padding: 17px;
+  font-weight: 700;
+  line-height: 1.62;
+  border-radius: 12px;
+  background: var(--disabled-bg);
+  color: var(--disabled-cl);
+  cursor: auto;
+
+  @include mq(tablet) {
+    width: 200px;
+  }
+}
+
 // Кнопка для hero
 
 .button--secondary {
+  position: relative;
   display: inline-block;
   width: 100%;
   padding: 19px;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.62;
   color: var(--accent-primary-gradient);
   border: solid 2px transparent;
@@ -70,33 +89,17 @@
   }
 
   &:hover {
-    box-shadow: 2px 1000px 1px var(--white-bg) inset;
+    border: solid 2px transparent;
+    background: var(--hover-secondary);
+    color: var(--white-bg);
+    box-shadow: var(--box-shadow-primary);
   }
-}
-
-// Кнопка для Program
-
-.button--white {
-  position: relative;
-  display: inline-block;
-  width: 100%;
-  padding: 19px;
-  font-weight: 600;
-  line-height: 1.62;
-  color: var(--primary-txt-cl);
-  background: transparent;
-  border: 2px solid var(--primary-txt-cl);
-  border-radius: 12px;
 
   &::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-      0deg,
-      var(--hover-primary-gradient) 0%,
-      var(--hover-secondary-gradient) 100%
-    );
+    background: var(--hover-secondary);
     border-radius: 12px;
     z-index: 1;
     opacity: 0;
@@ -110,5 +113,25 @@
   & span {
     position: relative;
     z-index: 2;
+  }
+}
+// Кнопка для Program
+
+.button--white {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  padding: 17px;
+  font-weight: 700;
+  line-height: 1.62;
+  color: var(--primary-txt-cl);
+  background-color: transparent;
+  border: 2px solid var(--primary-txt-cl);
+  border-radius: 12px;
+  transition: background-color var(--fast) linear, box-shadow var(--fast) linear;
+
+  &:hover {
+    background-color: var(--light-bg);
+    box-shadow: var(--box-shadow-light);
   }
 }

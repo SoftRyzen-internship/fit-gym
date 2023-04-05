@@ -73,7 +73,7 @@
   top: 50%;
   left: 0;
   transform: translateY(-50%);
-  fill: #4c40f7;
+  fill: var(--accent-primary-gradient);
 }
 
 .contacts__data {
@@ -104,6 +104,21 @@
   @include mq(desktop) {
     padding: 18px 53px 18px 28px;
     margin-bottom: 40px;
+  }
+
+  &.error {
+    border: 2px solid var(--error-cl);
+    box-shadow: 0px 8px 24px rgba(226, 30, 77, 0.5);
+  }
+
+  &.success {
+    .contacts__labelName {
+      background-image: url('../images/contacts/name.svg');
+    }
+
+    .contacts__labelEmail {
+      background-image: url('../images/contacts/email.svg');
+    }
   }
 }
 
@@ -146,12 +161,20 @@
   color: var(--secondary-txt-cl);
 }
 
-.contacts__labelIcon {
+.contacts__labelWrapper {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   right: 28px;
-  fill: var(--secondary-txt-cl);
+
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-repeat: no-repeat;
+  background-position: center;
 
   .contacts__textarea & {
     top: 17px;
@@ -160,6 +183,48 @@
     @include mq(desktop) {
       top: 20px;
     }
+  }
+}
+
+.contacts__labelName {
+  width: 18px;
+  height: 19px;
+}
+
+.contacts__labelEmail {
+  width: 20px;
+  height: 16px;
+}
+
+.contacts__labelMessage {
+  width: 20px;
+  height: 20px;
+}
+
+.contacts__labelIcon {
+  fill: var(--secondary-txt-cl);
+
+  .contacts__label.error & {
+    fill: var(--error-cl);
+  }
+
+  .contacts__label.success & {
+    display: none;
+  }
+}
+
+.contacts__error {
+  display: none;
+
+  .contacts__label.error & {
+    position: absolute;
+    bottom: -24px;
+    left: 28px;
+    display: block;
+    color: var(--error-cl);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.43;
   }
 }
 
@@ -184,6 +249,10 @@
 
   @include mq(tablet) {
     width: 200px;
+  }
+
+  &.button--disabled {
+    background-image: none;
   }
 
   & svg {
@@ -249,10 +318,25 @@
   background-color: transparent;
   border-radius: 50%;
   border: 2px solid var(--accent-primary-gradient);
+
+  background-repeat: no-repeat;
+  background-position: center;
+
+  .contacts__socialItem:nth-child(1) & {
+    background-image: url('../images/contacts/facebook.svg');
+  }
+
+  .contacts__socialItem:nth-child(3) & {
+    background-image: url('../images/contacts/linkedin.svg');
+  }
+
+  .contacts__socialItem:nth-child(4) & {
+    background-image: url('../images/contacts/twitter.svg');
+  }
 }
 
 .contacts__socialIcon {
-  fill: var(--accent-primary-gradient);
+  display: none;
 }
 
 .contacts__socialButton:hover {
@@ -268,6 +352,7 @@
   }
 
   .contacts__socialIcon {
+    display: block;
     fill: var(--primary-txt-cl);
   }
 }

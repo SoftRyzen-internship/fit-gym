@@ -61,15 +61,16 @@
         The all-in-one fitness method powered by your bodyweight to slulpt, and strengthen
       </h2>
     <div class="subscribe__formWrapper">
-      <h3 class="subscribe__formTitle">Want know about new plans?</h3>
-      <p class="subscribe__formText">Subscribe Now</p>
-      <form class="subscribe__form">
-        <input placeholder="Email" class="subscribe__input" />
-        <button aria-label="arrow right" type="submit" class="subscribe__button">
+      <p class="subscribe__formText">Want know about new plans?</p>
+      <h3 class="subscribe__formTitle">Subscribe Now</h3>`
+      <form class="subscribe__form" id="subscribe-form">
+        <input placeholder="Email" class="subscribe__input" id="subscribe-email"/>
+        <button aria-label="arrow right" type="submit" class="subscribe__button subscribe__disabled" disabled>
           <svg width="20" height="14" aria-label="right arrow" class="subscribe__icon">
             <use href="./assets/images/sprite.svg#arrow-right"></use>
           </svg>
         </button>
+        <span class="contacts__error">error</span>
       </form>
     </div>
   </div>
