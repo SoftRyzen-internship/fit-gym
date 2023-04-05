@@ -38,8 +38,6 @@ subscribeEmail.addEventListener('input', e => {
 subscribeForm.addEventListener('submit', e => {
   e.preventDefault();
   if (!isSubscribeValidValues.subscribeEmail) {return};
-  console.log("Hello");
-  console.log(isSubscribeValidValues.subscribeEmail)
   handleClick({
     triggerParent: subscribeForm,
     trigger: '.subscribe__button',
