@@ -1,3 +1,15 @@
+.subscribe {
+  background-image: linear-gradient(to bottom, var(--primary-bg) 80%, var(--secondary-bg) 80%);
+
+  @include mq(tablet) {
+    background-image: linear-gradient(to bottom, var(--primary-bg) 70%, var(--secondary-bg) 70%);
+  }
+
+  @include mq(desktop) {
+    background-image: linear-gradient(to bottom, var(--primary-bg) 79%, var(--secondary-bg) 79%);
+  }
+}
+
 .subscribe__container {
   position: relative;
   text-align: center;
@@ -21,13 +33,11 @@
   @include mq(tablet) {
     position: absolute;
     top: 0;
-    left: 17px;
+    left: 0;
   }
 
-  @include mq(tablet) {
-    position: absolute;
-    top: 0;
-    left: 0;
+  @include mq(desktop) {
+    top: 50px;
   }
 
   & img {
@@ -45,6 +55,7 @@
 
 .subscribe__title {
   letter-spacing: normal;
+  text-align: left;
   line-height: 1.3;
 
   @include mq(mobile-only) {
@@ -52,16 +63,15 @@
   }
 
   @include mq(tablet) {
-    width: 336px;
     position: absolute;
-    text-align: left;
     top: 55px;
     right: 32px;
+    width: 336px;
   }
 
   @include mq(desktop) {
-    width: 488px;
     top: 182px;
+    width: 488px;
   }
 }
 
@@ -89,14 +99,25 @@
   position: relative;
 }
 
-.subscribe__formTitle {
+.subscribe__form.error .contacts__error {
+  position: absolute;
+  bottom: -24px;
+  left: 28px;
+  display: block;
+  color: var(--error-cl);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.43;
+}
+
+.subscribe__formText {
   font-weight: 500;
   line-height: 1.5;
   margin-bottom: 20px;
 }
 
-.subscribe__formText {
-  font-family: 'Oswald';
+.subscribe__formTitle {
+  font-family: var(--second-font);
   font-weight: 700;
   font-size: 32px;
   line-height: 1.3;
@@ -112,6 +133,7 @@
   width: 100%;
   font-weight: 400;
   font-size: 18px;
+  line-height: 1.3;
   color: var(--primary-txt-cl);
   outline: none;
   border: none;
@@ -120,9 +142,14 @@
   box-shadow: 0px 8px 50px #3123f8;
   padding: 20px 53px 20px 28px;
 
+  @include mq(tablet) {
+    line-height: 1.78;
+  }
+
   &::placeholder {
     font-weight: 400;
     font-size: 18px;
+    line-height: 1.78;
     color: var(--secondary-txt-cl);
   }
 }
@@ -139,4 +166,8 @@
   & svg {
     stroke: var(--secondary-txt-cl);
   }
+}
+
+.subscribe__disabled {
+  cursor: auto;
 }
