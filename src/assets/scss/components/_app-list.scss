@@ -1,0 +1,55 @@
+.app__list {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.app__item {
+  display: inline-block;
+}
+
+.app__link {
+  display: inline-block;
+  position: relative;
+}
+
+.app__google,
+.app__apple {
+  border-radius: 8px;
+
+  @include mq(mobile) {
+    width: 148px;
+  }
+}
+
+.app__link::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 0;
+  width: 133px;
+  height: 40px;
+  z-index: 2;
+  background-size: contain;
+  background-repeat: no-repeat;
+  filter: drop-shadow(var(--box-shadow-app));
+  opacity: 0;
+  transition: opacity var(--fast) linear;
+
+  @include mq(mobile) {
+    width: 148px;
+    top: 0;
+  }
+}
+
+.app__link:hover::before {
+  opacity: 1;
+}
+
+.google::before {
+  background-image: url('../images/advantages/svg/google-play-hover.svg');
+}
+
+.apple::before {
+  background-image: url('../images/advantages/svg/app-store-hover.svg');
+}

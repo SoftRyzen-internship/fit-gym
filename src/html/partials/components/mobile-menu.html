@@ -15,18 +15,33 @@
       </div>
       {% include 'components/nav-menu.html' %}
     </div>
-
-    <div class="mobile-menu__link-wrapper">
-      <a class="mobile-menu__link" type="button" data-close aria-label="close button">
-        <svg width="100%" height="100%">
-          <use href="./assets/images/sprite.svg#google-play"></use>
-        </svg>
-      </a>
-      <a class="mobile-menu__link" type="button" data-close aria-label="close button">
-        <svg width="100%" height="100%">
-          <use href="./assets/images/sprite.svg#app-store"></use>
-        </svg>
-      </a>
-    </div>
+    <ul class="app__list">
+      <li class="app__item">
+        <a
+          target="_blank"
+          href="https://play.google.com/"
+          class="app__link google"
+          data-close
+          aria-label="close button"
+        >
+          <svg class="app__google" width="132" height="40" aria-label="google-play-icon">
+            <use href="./assets/images/sprite.svg#google-play"></use>
+          </svg>
+        </a>
+      </li>
+      <li class="app__item">
+        <a
+          target="_blank"
+          href="https://www.apple.com/ua/app-store/"
+          class="app__link apple"
+          data-close
+          aria-label="close button"
+        >
+          <svg class="app__apple" width="132" height="40" aria-label="app-store-icon">
+            <use href="./assets/images/sprite.svg#app-store"></use>
+          </svg>
+        </a>
+      </li>
+    </ul>
   </div>
 </div>
