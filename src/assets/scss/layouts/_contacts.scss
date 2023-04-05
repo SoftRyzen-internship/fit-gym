@@ -73,7 +73,7 @@
   top: 50%;
   left: 0;
   transform: translateY(-50%);
-  fill: #4c40f7;
+  fill: var(--accent-primary-gradient);
 }
 
 .contacts__data {
