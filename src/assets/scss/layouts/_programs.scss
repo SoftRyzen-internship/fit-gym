@@ -82,6 +82,12 @@
     var(--accent-secondary-gradient) 100%
   );
   padding: 20px;
+  @include mq(mobile) {
+    padding: 40px;
+  }
+  @include mq(tablet) {
+    padding: 20px;
+  }
 }
 
 .card__title {
