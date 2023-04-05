@@ -101,12 +101,21 @@
 }
 
 .modal__icon-form {
+  fill: var(--secondary-txt-cl);
   position: absolute;
   top: 14px;
   right: 31px;
 
   @include mq(tablet) {
     top: 26px;
+  }
+
+  .modal__form-control.error & {
+    fill: var(--error-cl);
+  }
+
+  .modal__form-control.success & {
+    display: none;
   }
 }
 
@@ -139,20 +148,22 @@
     color: #abafc7;
   }
 
-  &:not(:placeholder-shown) ~ .modal__icon-form stop:first-child {
-    stop-color: #0239fe;
+  .modal__form-control.success & {
+    background-repeat: no-repeat;
+    background-position: top 22px right 27px;
   }
 
-  &:not(:placeholder-shown) ~ .modal__icon-form stop:last-child {
-    stop-color: #0285fe;
+  .modal__form-control.success &--name {
+    background-image: url('../images/hero/svg/name.svg');
   }
-}
 
-.modal__form-control.error .modal__icon-form stop:first-child {
-  stop-color: #e21e4d;
-}
-.modal__form-control.error .modal__icon-form stop:last-child {
-  stop-color: #e21e4d;
+  .modal__form-control.success &--phone {
+    background-image: url('../images/hero/svg/phone.svg');
+  }
+
+  .modal__form-control.success &--email {
+    background-image: url('../images/hero/svg/email.svg');
+  }
 }
 
 .modal__send-btn {

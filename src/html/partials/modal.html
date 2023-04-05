@@ -1,5 +1,5 @@
-<div class="backdrop is-hidden" data-modal>
-  <div class="modal is-hidden">
+<div class="backdrop" data-modal>
+  <div class="modal">
     <svg class="close-btn modal__close-icon" aria-label="Close modal" data-modal-close>
       <use href="./assets/images/sprite.svg#icon-close"></use>
     </svg>
@@ -9,7 +9,7 @@
       <form class="modal__form" action="#" id="form">
         <div class="modal__form-control modal__form-control--name">
           <input
-            class="modal__form-input"
+            class="modal__form-input modal__form-input--name"
             placeholder="Name"
             id="name"
             type="text"
@@ -18,37 +18,18 @@
           />
           <span>Error message</span>
           <svg
-            class="modal__icon-form"
-            id="name"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="19"
+            aria-label="name"
+            class="modal__icon-form modal__icon-form--name"
           >
-            <path
-              d="M12 2C11.0111 2 10.0444 2.29324 9.22215 2.84265C8.3999 3.39206 7.75904 4.17295 7.3806 5.08658C7.00216 6.00021 6.90315 7.00555 7.09607 7.97545C7.289 8.94536 7.7652 9.83627 8.46447 10.5355C9.16373 11.2348 10.0546 11.711 11.0245 11.9039C11.9945 12.0969 12.9998 11.9978 13.9134 11.6194C14.827 11.241 15.6079 10.6001 16.1573 9.77785C16.7068 8.95561 17 7.98891 17 7C17 5.67392 16.4732 4.40215 15.5355 3.46447C14.5979 2.52678 13.3261 2 12 2V2ZM12 10C11.4067 10 10.8266 9.82405 10.3333 9.49441C9.83994 9.16476 9.45542 8.69623 9.22836 8.14805C9.0013 7.59987 8.94189 6.99667 9.05764 6.41473C9.1734 5.83279 9.45912 5.29824 9.87868 4.87868C10.2982 4.45912 10.8328 4.1734 11.4147 4.05764C11.9967 3.94189 12.5999 4.0013 13.1481 4.22836C13.6962 4.45542 14.1648 4.83994 14.4944 5.33329C14.8241 5.82664 15 6.40666 15 7C15 7.79565 14.6839 8.55871 14.1213 9.12132C13.5587 9.68393 12.7956 10 12 10V10ZM21 21V20C21 18.1435 20.2625 16.363 18.9497 15.0503C17.637 13.7375 15.8565 13 14 13H10C8.14348 13 6.36301 13.7375 5.05025 15.0503C3.7375 16.363 3 18.1435 3 20V21H5V20C5 18.6739 5.52678 17.4021 6.46447 16.4645C7.40215 15.5268 8.67392 15 10 15H14C15.3261 15 16.5979 15.5268 17.5355 16.4645C18.4732 17.4021 19 18.6739 19 20V21H21Z"
-              fill="url(#paint0_linear_577_461)"
-            />
-            <defs>
-              <linearGradient
-                id="paint0_linear_577_461"
-                x1="12"
-                y1="2"
-                x2="12"
-                y2="21"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop class="stop-first" stop-color="#abafc7" />
-                <stop class="stop-second" offset="1" stop-color="#abafc7" />
-              </linearGradient>
-            </defs>
+            <use href="./assets/images/sprite.svg#name"></use>
           </svg>
         </div>
 
         <div class="modal__form-control">
           <input
-            class="modal__form-input"
+            class="modal__form-input modal__form-input--phone"
             placeholder="Phone number"
             id="telephone"
             type="tel"
@@ -57,51 +38,18 @@
           />
           <span>Error message</span>
           <svg
-            class="modal__icon-form"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="19"
+            aria-label="phone"
+            class="modal__icon-form modal__icon-form--phone"
           >
-            <path
-              d="M16.57 22.0001C16.8356 22.0017 17.0989 21.9503 17.3444 21.849C17.5899 21.7477 17.8128 21.5985 18 21.4101L20.71 18.7001C20.8963 18.5128 21.0008 18.2593 21.0008 17.9951C21.0008 17.731 20.8963 17.4775 20.71 17.2901L16.71 13.2901C16.5227 13.1039 16.2692 12.9993 16.005 12.9993C15.7408 12.9993 15.4874 13.1039 15.3 13.2901L13.7 14.8801C12.5923 14.5848 11.5663 14.041 10.7 13.2901C9.95115 12.4224 9.40766 11.397 9.11003 10.2901L10.7 8.69014C10.8863 8.50278 10.9908 8.24933 10.9908 7.98514C10.9908 7.72096 10.8863 7.4675 10.7 7.28014L6.70003 3.28014C6.51267 3.09389 6.25922 2.98935 5.99503 2.98935C5.73085 2.98935 5.4774 3.09389 5.29003 3.28014L2.59003 6.00014C2.40167 6.18738 2.25248 6.41027 2.15118 6.65579C2.04988 6.90131 1.9985 7.16455 2.00003 7.43014C2.09076 11.2724 3.62611 14.9394 6.30003 17.7001C9.06075 20.3741 12.7277 21.9094 16.57 22.0001ZM6.00003 5.41014L8.59003 8.00014L7.30003 9.29014C7.17785 9.40459 7.08636 9.54788 7.03395 9.70687C6.98153 9.86586 6.96987 10.0355 7.00003 10.2001C7.3738 11.8705 8.16514 13.4188 9.30003 14.7001C10.5804 15.8365 12.1291 16.628 13.8 17.0001C13.9622 17.034 14.1303 17.0271 14.2891 16.98C14.4479 16.9329 14.5926 16.847 14.71 16.7301L16 15.4101L18.59 18.0001L16.59 20.0001C13.2738 19.9148 10.1095 18.5913 7.72003 16.2901C5.41295 13.8997 4.08564 10.7312 4.00003 7.41014L6.00003 5.41014ZM20 11.0001H22C22.026 9.81114 21.8109 8.6292 21.3678 7.52555C20.9247 6.4219 20.2627 5.41939 19.4217 4.57844C18.5808 3.73749 17.5783 3.07551 16.4746 2.63239C15.371 2.18928 14.189 1.97421 13 2.00014V4.00014C13.9279 3.96804 14.8525 4.12715 15.7163 4.46758C16.5801 4.808 17.3647 5.32246 18.0212 5.97898C18.6777 6.6355 19.1922 7.42005 19.5326 8.28385C19.873 9.14765 20.0321 10.0722 20 11.0001Z"
-              fill="url(#paint0_linear_510_741)"
-            />
-            <path
-              d="M13 8C15.1 8 16 8.9 16 11H18C18 7.78 16.22 6 13 6V8Z"
-              fill="url(#paint1_linear_510_741)"
-            />
-            <defs>
-              <linearGradient
-                id="paint0_linear_510_741"
-                x1="12.0011"
-                y1="1.99805"
-                x2="12.0011"
-                y2="22.0002"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop class="stop-first" stop-color="#abafc7" />
-                <stop class="stop-second" offset="1" stop-color="#abafc7" />
-              </linearGradient>
-              <linearGradient
-                id="paint1_linear_510_741"
-                x1="15.5"
-                y1="6"
-                x2="15.5"
-                y2="11"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop class="stop-first" stop-color="#abafc7" />
-                <stop class="stop-second" offset="1" stop-color="#abafc7" />
-              </linearGradient>
-            </defs>
+            <use href="./assets/images/sprite.svg#phone"></use>
           </svg>
         </div>
 
         <div class="modal__form-control">
           <input
-            class="modal__form-input"
+            class="modal__form-input modal__form-input--email"
             placeholder="Email"
             id="email"
             type="email"
@@ -110,30 +58,12 @@
           />
           <span>Error message</span>
           <svg
-            class="modal__icon-form"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="19"
+            aria-label="email"
+            class="modal__icon-form modal__icon-form--email"
           >
-            <path
-              d="M20 4H4C2.897 4 2 4.897 2 6V18C2 19.103 2.897 20 4 20H20C21.103 20 22 19.103 22 18V6C22 4.897 21.103 4 20 4ZM20 6V6.511L12 12.734L4 6.512V6H20ZM4 18V9.044L11.386 14.789C11.5611 14.9265 11.7773 15.0013 12 15.0013C12.2227 15.0013 12.4389 14.9265 12.614 14.789L20 9.044L20.002 18H4Z"
-              fill="url(#paint0_linear_510_745)"
-            />
-            <defs>
-              <linearGradient
-                id="paint0_linear_510_745"
-                x1="12"
-                y1="4"
-                x2="12"
-                y2="20"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop class="stop-first" stop-color="#abafc7" />
-                <stop class="stop-second" offset="1" stop-color="#abafc7" />
-              </linearGradient>
-            </defs>
+            <use href="./assets/images/sprite.svg#email"></use>
           </svg>
         </div>
 
