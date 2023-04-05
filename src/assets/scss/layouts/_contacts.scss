@@ -231,32 +231,6 @@
 }
 
 .contacts__send {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 24px;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 1.44;
-  color: var(--primary-txt-cl);
-  background-image: linear-gradient(
-    to bottom,
-    var(--accent-primary-gradient),
-    var(--accent-secondary-gradient)
-  );
-  border-radius: 20px;
-  padding-top: 19px;
-  padding-bottom: 19px;
-
-  @include mq(tablet) {
-    width: 200px;
-  }
-
-  &.button--disabled {
-    background-image: none;
-  }
-
   & svg {
     stroke: var(--primary-txt-cl);
   }

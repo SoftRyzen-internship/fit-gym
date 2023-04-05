@@ -1,7 +1,7 @@
 import { handleClick } from "./popUp";
 
 const contactsForm = document.getElementById('contacts-form');
-const contactsBtn = document.querySelector('.contacts__buttonCheck');
+const contactsBtn = document.querySelector('.contacts__send');
 
 const contactsName = document.getElementById('contacts-name');
 const contactsEmail = document.getElementById('contacts-email');
