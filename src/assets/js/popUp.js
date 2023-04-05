@@ -1,4 +1,4 @@
-function handlePopUp(content) {
+export function handlePopUp(content) {
   const overlay = document.querySelector('.pop-up__overlay');
   const closeBtn = document.querySelector('.pop-up__icon');
   const contentBlock = document.querySelector('.pop-up__description');
