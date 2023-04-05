@@ -100,15 +100,35 @@
   position: relative;
 }
 
-.modal__icon-form {
-  fill: var(--secondary-txt-cl);
+.modal__icon-wrapper {
+  width: 18px;
+  height: 19px;
   position: absolute;
   top: 14px;
   right: 31px;
 
+  background-repeat: no-repeat;
+  background-position: center;
+
   @include mq(tablet) {
     top: 26px;
   }
+
+  .modal__form-control.success &--name {
+    background-image: url('../images/hero/svg/name.svg');
+  }
+
+  .modal__form-control.success &--phone {
+    background-image: url('../images/hero/svg/phone.svg');
+  }
+
+  .modal__form-control.success &--email {
+    background-image: url('../images/hero/svg/email.svg');
+  }
+}
+
+.modal__icon-form {
+  fill: var(--secondary-txt-cl);
 
   .modal__form-control.error & {
     fill: var(--error-cl);
@@ -146,27 +166,6 @@
 
   &::placeholder {
     color: var(--secondary-txt-cl);
-  }
-
-  .modal__form-control.success & {
-    background-repeat: no-repeat;
-    background-position: top 10px right 27px;
-
-    @include mq(tablet) {
-      background-position: top 22px right 27px;
-    }
-  }
-
-  .modal__form-control.success &--name {
-    background-image: url('../images/hero/svg/name.svg');
-  }
-
-  .modal__form-control.success &--phone {
-    background-image: url('../images/hero/svg/phone.svg');
-  }
-
-  .modal__form-control.success &--email {
-    background-image: url('../images/hero/svg/email.svg');
   }
 }
 
