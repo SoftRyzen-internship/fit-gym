@@ -22,7 +22,7 @@ const isSubscribeValidValues = {
 }
 
 subscribeEmail.addEventListener('input', e => {
-  const isValidName = checkInputEmail(e.target.value, subscribeEmail);
+  const isValidName = checkEmail(e.target.value, subscribeEmail);
 
   if (isValidName) {
     isSubscribeValidValues.subscribeEmail = true;
@@ -49,7 +49,7 @@ subscribeForm.addEventListener('submit', e => {
 
 contactsForm.addEventListener('input', e => {
   if (e.target.id === 'contacts-name') {
-    const isValidName = checkInputName(e.target.value);
+    const isValidName = checkName(e.target.value);
 
     if (isValidName) {
       isContactsValidValues.contactsName = true;
@@ -60,7 +60,7 @@ contactsForm.addEventListener('input', e => {
   }
 
   if (e.target.id === 'contacts-email') {
-    const isValidEmail = checkInputEmail(e.target.value, contactsEmail);
+    const isValidEmail = checkEmail(e.target.value, contactsEmail);
 
     if (isValidEmail) {
       isContactsValidValues.contactsEmail = true;
@@ -82,7 +82,6 @@ contactsForm.addEventListener('input', e => {
   }
 
   if (isContactsValidValues.contactsName === true && isContactsValidValues.contactsEmail === true) {
-    console.log("remove classlist")
     contactsBtn.removeAttribute('disabled');
     contactsBtn.classList.remove('button--disabled');
     contactsBtn.classList.add('button--primary');
@@ -111,7 +110,7 @@ contactsForm.addEventListener('submit', e => {
 });
 
 // CHECK INPUT NAME
-const checkInputName = name => {
+const checkName = name => {
   let isValidName = false;
 
   // Get values from the inputs
@@ -123,18 +122,18 @@ const checkInputName = name => {
     console.log('error');
     //Show error
     //Add error class
-    setErrorFor(contactsName, 'Error(field is required)');
+    setError(contactsName, 'Error(field is required)');
   } else if (usernameValue.length < 2) {
-    setErrorFor(contactsName, 'Error(from 2 to 30 letters)');
+    setError(contactsName, 'Error(from 2 to 30 letters)');
   } else if (usernameValue.length > 30) {
-    setErrorFor(contactsName, 'Error(from 2 to 30 letters)');
+    setError(contactsName, 'Error(from 2 to 30 letters)');
   } else if (!usernameValue.match(nameRe)) {
     //Show error
     //Add error class
-    setErrorFor(contactsName, 'Error(only latin letters)');
+    setError(contactsName, 'Error(only latin letters)');
   } else {
     //Add succes class
-    setSuccessFor(contactsName);
+    setSuccess(contactsName);
     isValidName = true;
   }
 
@@ -143,7 +142,7 @@ const checkInputName = name => {
 
 // CHECK INPUT EMAIL
 const emailRe = /^([a-zA-Z0-9])+([a-zA-Z0-9._-]+)@[a-zA-Z0-9]+([.-]?[a-zA-Z0-9]+)\.[a-zA-Z]{2,}$/;
-const checkInputEmail = (email, inputEmail) => {
+const checkEmail = (email, inputEmail) => {
   let isValidEmail = false;
   // Get values from the inputs
   const emailValue = email.trim();
@@ -152,14 +151,14 @@ const checkInputEmail = (email, inputEmail) => {
   if (!emailValue) {
     //Show error
     //Add error class
-    setErrorFor(inputEmail, 'Error(field is required)');
+    setError(inputEmail, 'Error(field is required)');
   } else if (!emailValue.match(emailRe)) {
     //Show error
     //Add error class
-    setErrorFor(inputEmail, 'Error(not valid email)');
+    setError(inputEmail, 'Error(not valid email)');
   } else {
     //Add succes class
-    setSuccessFor(inputEmail);
+    setSuccess(inputEmail);
     isValidEmail = true;
   }
 
@@ -167,7 +166,7 @@ const checkInputEmail = (email, inputEmail) => {
 };
 
 // SET CLASSNAME FOR ERROR
-const setErrorFor = (input, message) => {
+const setError = (input, message) => {
   const formControl = input.parentElement;
   const errorText = formControl.querySelector('.contacts__error');
 
@@ -180,7 +179,7 @@ const setErrorFor = (input, message) => {
 };
 
 // SET CLASSNAME FOR SUCCESS
-const setSuccessFor = input => {
+const setSuccess = input => {
   const formControl = input.parentElement;
 
   //add success class
