@@ -101,6 +101,7 @@
 
 .advantages__link {
   display: inline-block;
+  position: relative;
 }
 
 .advantages__image {
@@ -117,7 +118,41 @@
 
 .advantages__google,
 .advantages__apple {
+  border-radius: 8px;
+
   @include mq(mobile) {
     width: 148px;
   }
+}
+
+.advantages__link::before {
+  content: '';
+  position: absolute;
+  top: 1px;
+  left: 0;
+  width: 133px;
+  height: 40px;
+  z-index: 2;
+  background-size: contain;
+  background-repeat: no-repeat;
+  filter: drop-shadow(0px 8px 24px rgba(76, 64, 247, 0.5));
+  opacity: 0;
+  transition: opacity var(--fast) linear;
+
+  @include mq(mobile) {
+    width: 148px;
+    top: 0;
+  }
+}
+
+.advantages__link:hover::before {
+  opacity: 1;
+}
+
+.google::before {
+  background-image: url('../images/advantages/svg/google-play-hover.svg');
+}
+
+.apple::before {
+  background-image: url('../images/advantages/svg/app-store-hover.svg');
 }
