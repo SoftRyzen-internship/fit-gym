@@ -40,15 +40,16 @@ export function handlePopUp(content) {
   window.addEventListener('keydown', closeByEsc);
 }
 
-function handleIconsClick() {
-  const iconsList = document.querySelector('.footer__social-list');
+function handleIconsClick(list, item) {
+  const iconsList = document.querySelector(list);
 
   iconsList.addEventListener('click', e => {
-    if (e.target.closest('.footer__social-link')) {
+    if (e.target.closest(item)) {
       handlePopUp(`<p class="pop-up__content">Sorry</p>
     <p class="pop-up__content">This page is in progress</p>`);
     }
   });
 }
 
-handleIconsClick();
+handleIconsClick('.footer__social-list', '.footer__social-link');
+handleIconsClick('.contacts__socialList', '.contacts__socialItem');
