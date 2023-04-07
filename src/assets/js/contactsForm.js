@@ -1,4 +1,5 @@
 import { handlePopUp } from "./popUp";
+import {checkInputName, checkInputEmail } from "./validation";
 
 const contactsForm = document.getElementById('contacts-form');
 const contactsBtn = document.querySelector('.contacts__send');
@@ -7,49 +8,33 @@ const contactsName = document.getElementById('contacts-name');
 const contactsEmail = document.getElementById('contacts-email');
 const contactsMessage = document.getElementById('contacts-message');
 
-const subscribeForm = document.getElementById('subscribe-form');
-const subscribeBtn = document.querySelector('.subscribe__button');
+export const disableBtnSubmit = (btn) => {
+  btn.setAttribute('disabled', 'disabled');
+  btn.classList.add('button--disabled');
+  btn.classList.remove('button--primary');
+}
 
-const subscribeEmail = document.getElementById('subscribe-email');
+export const enableBtnSubmit = (btn) => {
+  btn.removeAttribute('disabled');
+  btn.classList.remove('button--disabled');
+  btn.classList.add('button--primary');
+}
+
+export const resetForm = (btn, form) => {
+  form.reset();
+  disableBtnSubmit(btn);
+  const array = form.querySelectorAll('.success');
+  Array.from(array).map(item => item.classList.remove('success'));
+}
 
 const isContactsValidValues = {
   contactsName: false,
   contactsEmail: false,
 };
 
-const isSubscribeValidValues = {
-  subscribeEmail: false,
-}
-
-subscribeEmail.addEventListener('input', e => {
-  const isValidName = checkEmail(e.target.value, subscribeEmail);
-
-  if (isValidName) {
-    isSubscribeValidValues.subscribeEmail = true;
-    subscribeBtn.removeAttribute('disabled');
-    subscribeBtn.classList.remove('subscribe__disabled');
-  } else {
-    isSubscribeValidValues.subscribeEmail = false;
-    subscribeBtn.setAttribute('disabled', 'disabled');
-    subscribeBtn.classList.add('subscribe__disabled');
-  }
-});
-
-subscribeForm.addEventListener('submit', e => {
-  e.preventDefault();
-  if (!isSubscribeValidValues.subscribeEmail) {return};
-  handlePopUp(`<p class="pop-up__content-subscribe">Successful subscribe!</p>`);
-  console.log({ email: subscribeEmail.value });
-  e.currentTarget.reset();
-  isSubscribeValidValues.subscribeEmail = false;
-  e.currentTarget.classList.remove('success');
-  subscribeBtn.setAttribute('disabled', 'disabled');
-  subscribeBtn.classList.add('subscribe__disabled');
-});
-
 contactsForm.addEventListener('input', e => {
   if (e.target.id === 'contacts-name') {
-    const isValidName = checkName(e.target.value);
+    const isValidName = checkInputName(e.target.value, contactsName);
 
     if (isValidName) {
       isContactsValidValues.contactsName = true;
@@ -60,7 +45,7 @@ contactsForm.addEventListener('input', e => {
   }
 
   if (e.target.id === 'contacts-email') {
-    const isValidEmail = checkEmail(e.target.value, contactsEmail);
+    const isValidEmail = checkInputEmail(e.target.value, contactsEmail);
 
     if (isValidEmail) {
       isContactsValidValues.contactsEmail = true;
@@ -82,13 +67,9 @@ contactsForm.addEventListener('input', e => {
   }
 
   if (isContactsValidValues.contactsName === true && isContactsValidValues.contactsEmail === true) {
-    contactsBtn.removeAttribute('disabled');
-    contactsBtn.classList.remove('button--disabled');
-    contactsBtn.classList.add('button--primary');
+    enableBtnSubmit(contactsBtn);
   } else {
-    contactsBtn.setAttribute('disabled', 'disabled');
-    contactsBtn.classList.add('button--disabled');
-    contactsBtn.classList.remove('button--primary');
+    disableBtnSubmit(contactsBtn);
   }
 });
 
@@ -100,90 +81,9 @@ contactsForm.addEventListener('submit', e => {
     message: contactsMessage.value,
   });
   handlePopUp(`<p class="pop-up__content-subscribe">Successful subscribe!</p>`);
-  e.currentTarget.reset();
   isContactsValidValues.contactsName = false;
   isContactsValidValues.contactsEmail = false;
-  contactsBtn.setAttribute('disabled', 'disabled');
-  contactsBtn.classList.add('button--disabled');
-  contactsBtn.classList.remove('button--primary');
-  const array = contactsForm.querySelectorAll('.success');
-  Array.from(array).map(item => item.classList.remove('success'));
+  resetForm(contactsBtn, contactsForm);
 });
 
-// CHECK INPUT NAME
-const checkName = name => {
-  let isValidName = false;
 
-  // Get values from the inputs
-  const usernameValue = name.trim();
-
-  // VALIDATION NAME
-  const nameRe = /^[a-zA-Z-]+$/;
-  if (!usernameValue) {
-    console.log('error');
-    //Show error
-    //Add error class
-    setError(contactsName, 'Error(field is required)');
-  } else if (usernameValue.length < 2) {
-    setError(contactsName, 'Error(from 2 to 30 letters)');
-  } else if (usernameValue.length > 30) {
-    setError(contactsName, 'Error(from 2 to 30 letters)');
-  } else if (!usernameValue.match(nameRe)) {
-    //Show error
-    //Add error class
-    setError(contactsName, 'Error(only latin letters)');
-  } else {
-    //Add succes class
-    setSuccess(contactsName);
-    isValidName = true;
-  }
-
-  return isValidName;
-};
-
-// CHECK INPUT EMAIL
-const emailRe = /^([a-zA-Z0-9])+([a-zA-Z0-9._-]+)@[a-zA-Z0-9]+([.-]?[a-zA-Z0-9]+)\.[a-zA-Z]{2,}$/;
-const checkEmail = (email, inputEmail) => {
-  let isValidEmail = false;
-  // Get values from the inputs
-  const emailValue = email.trim();
-
-  // VALIDATION PHONE
-  if (!emailValue) {
-    //Show error
-    //Add error class
-    setError(inputEmail, 'Error(field is required)');
-  } else if (!emailValue.match(emailRe)) {
-    //Show error
-    //Add error class
-    setError(inputEmail, 'Error(not valid email)');
-  } else {
-    //Add succes class
-    setSuccess(inputEmail);
-    isValidEmail = true;
-  }
-
-  return isValidEmail;
-};
-
-// SET CLASSNAME FOR ERROR
-const setError = (input, message) => {
-  const formControl = input.parentElement;
-  const errorText = formControl.querySelector('.contacts__error');
-
-  //add error message inside small
-  errorText.innerText = message;
-
-  //add error class
-  formControl.classList.add('error');
-  formControl.classList.remove('success');
-};
-
-// SET CLASSNAME FOR SUCCESS
-const setSuccess = input => {
-  const formControl = input.parentElement;
-
-  //add success class
-  formControl.classList.add('success');
-  formControl.classList.remove('error');
-};
