@@ -8,6 +8,11 @@ const refs = {
   openModal: document.querySelectorAll('[data-modal-open]'),
 };
 
+const deleteEventListeners = () => {
+  document.removeEventListener('keydown', handleKey);
+  refs.backdrop.removeEventListener('mousedown', handleClose);
+};
+
 export function toggleModal() {
   document.documentElement.classList.toggle('scroll-hidden');
   if (window.innerWidth >= 1280) {
@@ -19,9 +24,12 @@ export function toggleModal() {
   if (!refs.modal.classList.contains('is-hidden')) {
     form.addEventListener('input', modalInputHandler);
     form.addEventListener('submit', modalSubmitHandler);
+    document.addEventListener('keydown', handleKey);
+    refs.backdrop.addEventListener('mousedown', handleClose);
   }
   if (refs.modal.classList.contains('is-hidden')) {
     removeModalListeners();
+    deleteEventListeners();
   }
 }
 
@@ -31,6 +39,7 @@ function handleKey(e) {
     refs.modal.classList.add('is-hidden');
     document.documentElement.classList.remove('scroll-hidden');
     removeModalListeners();
+    deleteEventListeners();
   }
 
   return;
@@ -40,9 +49,8 @@ function handleClose(e) {
   if (e.target !== e.currentTarget) return;
   toggleModal();
   removeModalListeners();
+  deleteEventListeners();
 }
 
-document.addEventListener('keydown', handleKey);
-refs.backdrop.addEventListener('mousedown', handleClose);
 refs.closeModalBtn.addEventListener('click', () => toggleModal());
 Array.from(refs.openModal).map(btn => btn.addEventListener('click', () => toggleModal()));
