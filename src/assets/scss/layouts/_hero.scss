@@ -102,11 +102,12 @@
 
   @include mq(tablet) {
     width: 340px;
-    top: 4px;
+    top: 10px;
     right: 25px;
     height: 556px;
   }
   @include mq(desktop) {
+    top: 4px;
     width: 559px;
     height: 793px;
   }
