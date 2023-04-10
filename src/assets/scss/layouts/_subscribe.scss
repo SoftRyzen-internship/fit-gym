@@ -140,7 +140,7 @@
   border-radius: 11px;
   background-color: var(--secondary-bg);
   box-shadow: 0px 8px 50px #3123f8;
-  padding: 20px 53px 20px 28px;
+  padding: 20px 64px 20px 28px;
 
   transition: box-shadow var(--fast) linear, border var(--fast) linear;
 
@@ -176,7 +176,7 @@
   background-color: transparent;
 
   .subscribe__form.success & {
-    background-image: url("../images/subscribe/arrow-right.svg");
+    background-image: url('../images/subscribe/arrow-right.svg');
     background-repeat: no-repeat;
     background-position: center;
   }
