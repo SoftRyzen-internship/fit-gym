@@ -19,7 +19,7 @@
   font-size: 52px;
   line-height: 1.1;
   @include mq(tablet) {
-    width: 370px;
+    width: 390px;
     margin-top: 158px;
     font-size: 68px;
   }
@@ -50,7 +50,7 @@
   margin-top: 40px;
   @include mq(tablet) {
     display: flex;
-    margin-top: 83px;
+    margin-top: 90px;
   }
   @include mq(desktop) {
     margin-top: 30px;
@@ -91,14 +91,19 @@
 
 .hero__image {
   position: absolute;
-  top: 45px;
-  right: -65px;
+  top: 40px;
+  right: -85px;
   width: 235px;
   height: 370px;
+  @media (min-width: 360px) {
+    top: 45px;
+    right: -65px;
+  }
+
   @include mq(tablet) {
     width: 340px;
-    top: 0;
-    right: 0;
+    top: 4px;
+    right: 25px;
     height: 556px;
   }
   @include mq(desktop) {
