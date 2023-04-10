@@ -1,3 +1,9 @@
+.advantages {
+  @include mq(mobile-only) {
+    padding-bottom: 0;
+  }
+}
+
 .advantages__wrapper {
   @include mq(tablet) {
     display: flex;
@@ -82,10 +88,6 @@
 }
 
 .advantages__apps {
-  @include mq(mobile-only) {
-    margin-bottom: 40px;
-  }
-
   @include mq(tablet) {
     display: flex;
     gap: 16px;
