@@ -1,8 +1,14 @@
 .hero {
   background-image: url('../images/hero/background1-min.svg');
-  background-position: -10px -30px;
+  background-position: -241px -81px;
   background-repeat: no-repeat;
   background-size: 1440px 800px;
+  @include mq(tablet) {
+    background-position: -251px -72px;
+  }
+  @include mq(desktop) {
+    background-position: -10px -30px;
+  }
 }
 
 .hero__text-wrapper {
@@ -102,11 +108,12 @@
 
   @include mq(tablet) {
     width: 340px;
-    top: 4px;
+    top: 10px;
     right: 25px;
     height: 556px;
   }
   @include mq(desktop) {
+    top: 4px;
     width: 559px;
     height: 793px;
   }
