@@ -28,9 +28,9 @@
     position: absolute;
     inset: 0;
     background: linear-gradient(
-      0deg,
-      var(--hover-primary-gradient) 0%,
-      var(--hover-secondary-gradient) 100%
+      276.04deg,
+      var(--accent-primary-gradient) 2.88%,
+      var(--hover-additional-gradient) 100%
     );
     border-radius: 12px;
     z-index: 1;
@@ -90,18 +90,25 @@
   }
 
   &:hover {
-    border: solid 2px transparent;
-    background: var(--hover-secondary);
-    color: var(--white-bg);
     box-shadow: var(--box-shadow-primary);
+    color: var(--primary-txt-cl);
+    background: linear-gradient(
+      276.04deg,
+      var(--hover-additional-gradient) 2.88%,
+      var(--hover-additional-gradient) 100%
+    );
   }
 
   &::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: var(--hover-secondary);
-    border-radius: 12px;
+    background: linear-gradient(
+      276.04deg,
+      var(--accent-primary-gradient) 2.88%,
+      var(--hover-additional-gradient) 100%
+    );
+    border-radius: 9px;
     z-index: 1;
     opacity: 0;
     transition: opacity var(--fast) linear;
@@ -129,10 +136,12 @@
   background-color: transparent;
   border: 2px solid var(--primary-txt-cl);
   border-radius: 12px;
-  transition: background-color var(--fast) linear, box-shadow var(--fast) linear;
+  transition: background-color var(--fast) linear, box-shadow var(--fast) linear,
+    border var(--fast) linear;
 
   &:hover {
-    background-color: var(--light-bg);
-    box-shadow: var(--box-shadow-light);
+    border: 2px solid var(--black-bg);
+    background-color: var(--black-bg);
+    color: var(--white-bg);
   }
 }
