@@ -7,8 +7,9 @@
     background-position: 37% -72px;
   }
   @include mq(desktop) {
-    background-size: 1520px 800px;
-    background-position: center -30px;
+    background-image: url('../images/hero/bg.svg');
+    background-size: 1860px 800px;
+    background-position: center top;
   }
 }
 
