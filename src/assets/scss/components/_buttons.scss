@@ -136,16 +136,12 @@
   background-color: transparent;
   border: 2px solid var(--primary-txt-cl);
   border-radius: 12px;
-  transition: background-color var(--fast) linear, box-shadow var(--fast) linear;
-
-  // &:hover {
-  //   color: var(--accent-primary-gradient);
-  //   background-color: var(--white-bg);
-  // }
+  transition: background-color var(--fast) linear, box-shadow var(--fast) linear,
+    border var(--fast) linear;
 
   &:hover {
-    border: 2px solid var(--light-bg);
-    background-color: var(--light-bg);
-    box-shadow: var(--box-shadow-light);
+    border: 2px solid var(--black-bg);
+    background-color: var(--black-bg);
+    color: var(--white-bg);
   }
 }
