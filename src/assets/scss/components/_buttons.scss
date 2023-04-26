@@ -132,7 +132,7 @@
   transition: background-color var(--fast) linear, box-shadow var(--fast) linear;
 
   &:hover {
-    background-color: var(--light-bg);
-    box-shadow: var(--box-shadow-light);
+    color: var(--accent-primary-gradient);
+    background-color: var(--white-bg);
   }
 }
